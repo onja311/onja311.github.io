@@ -10,8 +10,8 @@ body {
     color: #fff; /* Manova ny lokon'ny soratra amin'ny fotsy */
 }
 
-h1, h2 {
-    color: #fff; /* Manova ny lokon'ny lohateny amin'ny fotsy */
+h1, h2, p {
+    color: #fff; /* Manova ny lokon'ny lohateny sy ny paragrafy amin'ny fotsy */
     text-align: center;
     margin-top: 20px;
 }
@@ -43,8 +43,8 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Manome mangarahara kely ny faritra */
-    color: #333; /* Manova ny lokon'ny soratra ao amin'ny faritra ho mainty */
+    background: rgba(0, 0, 0, 0.5); /* Manome mangarahara kely ny faritra */
+    color: #fff; /* Manova ny lokon'ny soratra ao amin'ny faritra ho fotsy */
     margin: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
