@@ -1,83 +1,62 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+    <p>Découvrez nos produits, services et rejoignez notre communauté d'entrepreneurs passionnés.</p>
 
-h1, h2 {
-    color: #333;
-    text-align: center;
-    margin-top: 20px;
-}
+    <nav>
+        <ul>
+            <li><a href="#produits">Nos Produits</a></li>
+            <li><a href="#services">Nos Services</a></li>
+            <li><a href="#entrepreneurs">Entrepreneurs</a></li>
+            <li><a href="#membre">Devenir Membre</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-    background-color: #333;
-    margin: 0;
-}
+    <section id="produits">
+        <h2>Nos Produits</h2>
+        <img src="OIP (2).jfif" alt="Description de l'image 1">
+        <p>Explorez notre large gamme de produits adaptés à vos besoins. De l'électronique aux vêtements, nous avons tout ce qu'il vous faut.</p>
+        <img src="OIP (4).jfif" alt="Description de l'image 2">
+        <p>Autres produits intéressants pour vous!</p>
+        <img src="OIP (5).jfif" alt="Description de l'image 3">
+        <p>Nous avons encore beaucoup plus à vous offrir.</p>
+        <img src="OIP.jfif" alt="Description de l'image 4">
+        <p>Profitez de nos offres exceptionnelles!</p>
+    </section>
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+    <section id="services">
+        <h2>Nos Services</h2>
+        <p>Découvrez nos services personnalisés pour aider les entrepreneurs à réussir : conseil, mentorat, et plus encore.</p>
+    </section>
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    display: inline-block;
-}
+    <section id="entrepreneurs">
+        <h2>Entrepreneurs</h2>
+        <p>Rejoignez notre communauté d'entrepreneurs et partagez vos expériences, trouvez des partenaires, et développez votre réseau.</p>
+    </section>
 
-nav ul li a:hover {
-    background-color: #007BFF;
-    color: white;
-}
+    <section id="membre">
+        <h2>Devenir Membre</h2>
+        <p>Inscrivez-vous dès aujourd'hui pour bénéficier d'avantages exclusifs, de réductions, et bien plus encore.</p>
+        <form>
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="submit" value="S'inscrire">
+        </form>
+    </section>
 
-section {
-    padding: 20px;
-    background: white;
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-}
-
-form label {
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="email"] {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form input[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Pour toute question ou suggestion, n'hésitez pas à <a href="mailto:contact@exemple.com">nous contacter</a>.</p>
+    </section>
+</body>
+</html>
