@@ -3,7 +3,10 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-image: url('background.jpg'); /* Ampidiro ny anaran'ny sary background eto */
+    background-size: cover; /* Mba hampifanaraka ny sary amin'ny efijery */
+    background-repeat: no-repeat; /* Hisorohana ny famerimberenana ny sary */
+    background-attachment: fixed; /* Mba hampijanona ny sary eo amin'ny toerana iray */
 }
 
 h1, h2 {
