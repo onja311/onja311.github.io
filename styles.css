@@ -7,10 +7,11 @@ body {
     background-size: cover; /* Mba hampifanaraka ny sary amin'ny efijery */
     background-repeat: no-repeat; /* Hisorohana ny famerimberenana ny sary */
     background-attachment: fixed; /* Mba hampijanona ny sary eo amin'ny toerana iray */
+    color: #fff; /* Manova ny lokon'ny soratra amin'ny fotsy */
 }
 
 h1, h2 {
-    color: #333;
+    color: #fff; /* Manova ny lokon'ny lohateny amin'ny fotsy */
     text-align: center;
     margin-top: 20px;
 }
@@ -42,7 +43,8 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.8); /* Manome mangarahara kely ny faritra */
+    color: #333; /* Manova ny lokon'ny soratra ao amin'ny faritra ho mainty */
     margin: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
