@@ -1,2 +1,2 @@
-User-agent: *
+NotepUser-agent: *
 Disallow:
