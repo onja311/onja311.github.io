@@ -8,11 +8,16 @@ body {
 
 h1, h2 {
     color: #333;
+    text-align: center;
+    margin-top: 20px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
+    background-color: #333;
+    margin: 0;
 }
 
 nav ul li {
@@ -22,13 +27,29 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+section {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
     display: flex;
     flex-direction: column;
     width: 300px;
+    margin: auto;
 }
 
 form label {
@@ -38,7 +59,9 @@ form label {
 form input[type="text"],
 form input[type="email"] {
     margin-bottom: 10px;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 form input[type="submit"] {
@@ -47,17 +70,14 @@ form input[type="submit"] {
     border: none;
     padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
 img {
     max-width: 100%;
     height: auto;
-}
-
-section {
-    padding: 20px;
-    background: white;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
