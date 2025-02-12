@@ -1,33 +1,32 @@
-button, .button, input[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover, .button:hover, input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-image: url('background.jpg'); /* Anaran'ilay sary background */
-    background-size: cover; /* Mba hampifanaraka ny sary amin'ny efijery */
-    background-repeat: no-repeat; /* Hisorohana ny famerimberenana ny sary */
-    background-attachment: fixed; /* Mba hampijanona ny sary eo amin'ny toerana iray */
-    color: #f0f0f0; /* Manova ny lokon'ny soratra amin'ny fotsy misimisy kokoa */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f0f0f0;
+    font-size: 16px; /* Fanovana ny haben'ny soratra */
 }
 
-h1, h2, p {
-    color: #f0f0f0; /* Manova ny lokon'ny lohateny sy ny paragrafy amin'ny fotsy misimisy kokoa */
+h1, h2 {
+    color: #f0f0f0;
     text-align: center;
     margin-top: 20px;
+}
+
+h1 {
+    font-size: 36px; /* Fanovana ny haben'ny lohateny h1 */
+}
+
+h2 {
+    font-size: 28px; /* Fanovana ny haben'ny lohateny h2 */
+}
+
+p, .card-content {
+    font-size: 18px; /* Fanovana ny haben'ny paragrafy sy ny atiny ao amin'ny card */
 }
 
 nav ul {
@@ -58,78 +57,4 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Manome mangarahara kokoa ny faritra */
-    color: #f0f0f0; /* Manova ny lokon'ny soratra ao amin'ny faritra ho fotsy misimisy kokoa */
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-}
-
-form label {
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="email"] {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form input[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.grid-item {
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-footer a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
+    background: rgba(0, 0, 0, 
