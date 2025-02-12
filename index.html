@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+    <header>
+        <img src="header.jpg" alt="Lohateny Sary" style="width: 100%; height: auto;">
+        <h1>Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+    </header>
+
     <p>Découvrez nos produits, services et rejoignez notre communauté d'entrepreneurs passionnés.</p>
 
     <nav>
@@ -22,14 +26,36 @@
 
     <section id="produits">
         <h2>Nos Produits</h2>
-        <img src="OIP (2).jfif" alt="Description de l'image 1">
-        <p>Explorez notre large gamme de produits adaptés à vos besoins. De l'électronique aux vêtements, nous avons tout ce qu'il vous faut.</p>
-        <img src="OIP (4).jfif" alt="Description de l'image 2">
-        <p>Autres produits intéressants pour vous!</p>
-        <img src="OIP (5).jfif" alt="Description de l'image 3">
-        <p>Nous avons encore beaucoup plus à vous offrir.</p>
-        <img src="OIP.jfif" alt="Description de l'image 4">
-        <p>Profitez de nos offres exceptionnelles!</p>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="produit1.jpg" alt="Produit 1">
+                <div class="card-content">
+                    <h3>Produit 1</h3>
+                    <p>Explorez notre large gamme de produits adaptés à vos besoins.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="produit2.jpg" alt="Produit 2">
+                <div class="card-content">
+                    <h3>Produit 2</h3>
+                    <p>Autres produits intéressants pour vous!</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="produit3.jpg" alt="Produit 3">
+                <div class="card-content">
+                    <h3>Produit 3</h3>
+                    <p>Nous avons encore beaucoup plus à vous offrir.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="produit4.jpg" alt="Produit 4">
+                <div class="card-content">
+                    <h3>Produit 4</h3>
+                    <p>Profitez de nos offres exceptionnelles!</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="services">
@@ -58,5 +84,15 @@
         <h2>Contactez-nous</h2>
         <p>Pour toute question ou suggestion, n'hésitez pas à <a href="mailto:contact@exemple.com">nous contacter</a>.</p>
     </section>
+
+    <footer>
+        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
+        <p>Contactez-nous: <a href="mailto:contact@exemple.com">contact@exemple.com</a></p>
+        <p>Suivez-nous: 
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+            <a href="https://www.twitter.com" target="_blank">Twitter</a> | 
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </p>
+    </footer>
 </body>
 </html>
