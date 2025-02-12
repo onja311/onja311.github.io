@@ -7,11 +7,11 @@ body {
     background-size: cover; /* Mba hampifanaraka ny sary amin'ny efijery */
     background-repeat: no-repeat; /* Hisorohana ny famerimberenana ny sary */
     background-attachment: fixed; /* Mba hampijanona ny sary eo amin'ny toerana iray */
-    color: #fff; /* Manova ny lokon'ny soratra amin'ny fotsy */
+    color: #f0f0f0; /* Manova ny lokon'ny soratra amin'ny fotsy misimisy kokoa */
 }
 
 h1, h2, p {
-    color: #fff; /* Manova ny lokon'ny lohateny sy ny paragrafy amin'ny fotsy */
+    color: #f0f0f0; /* Manova ny lokon'ny lohateny sy ny paragrafy amin'ny fotsy misimisy kokoa */
     text-align: center;
     margin-top: 20px;
 }
@@ -43,8 +43,8 @@ nav ul li a:hover {
 
 section {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Manome mangarahara kely ny faritra */
-    color: #fff; /* Manova ny lokon'ny soratra ao amin'ny faritra ho fotsy */
+    background: rgba(0, 0, 0, 0.7); /* Manome mangarahara kokoa ny faritra */
+    color: #f0f0f0; /* Manova ny lokon'ny soratra ao amin'ny faritra ho fotsy misimisy kokoa */
     margin: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
