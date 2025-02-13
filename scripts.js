@@ -26,3 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
         element.classList.add("visible");
     });
 });
+.slide-in {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
