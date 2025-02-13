@@ -60,18 +60,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     logoutButton.addEventListener("click", function() {
-        loginButton.style.display = "block";
-        registerButton.style.display = "block";
-        logoutButton.style.display = "none";
-        publicationFormSection.style.display = "none";
-        publicationsSection.style.display = "none";
+        const confirmLogout = confirm("Êtes-vous sûr de vouloir vous déconnecter?");
+        if (confirmLogout) {
+            loginButton.style.display = "block";
+            registerButton.style.display = "block";
+            logoutButton.style.display = "none";
+            publicationFormSection.style.display = "none";
+            publicationsSection.style.display = "none";
 
-        // Fanavaozana ny navigation
-        navMenu.querySelector('a[href="profile.html"]').style.display = "none";
-        navMenu.querySelector('a[href="recherche.html"]').style.display = "none";
-        navMenu.querySelector('a[href="publications.html"]').style.display = "none";
-        navMenu.querySelector('a[href="messages.html"]').style.display = "none";
-        navMenu.querySelector('a[href="notifications.html"]').style.display = "none";
+            // Fanavaozana ny navigation
+            navMenu.querySelector('a[href="profile.html"]').style.display = "none";
+            navMenu.querySelector('a[href="recherche.html"]').style.display = "none";
+            navMenu.querySelector('a[href="publications.html"]').style.display = "none";
+            navMenu.querySelector('a[href="messages.html"]').style.display = "none";
+            navMenu.querySelector('a[href="notifications.html"]').style.display = "none";
+        }
     });
 
     forgotPassword.addEventListener("click", function() {
