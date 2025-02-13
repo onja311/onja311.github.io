@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const query = searchInput.value.toLowerCase();
         searchResults.innerHTML = ""; // Mamafa ny valiny teo aloha
 
+        let foundResults = false;
+
         // Fikarohana mpikambana
-        const membersContainer = document.getElementById("members");
         const members = [
             { name: "Mpikambana 1", bio: "Bio an'i Mpikambana 1" },
             { name: "Mpikambana 2", bio: "Bio an'i Mpikambana 2" },
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 memberElement.appendChild(bio);
                 memberElement.appendChild(followButton);
                 searchResults.appendChild(memberElement);
+                foundResults = true;
             }
         });
 
@@ -57,10 +59,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 publicationElement.appendChild(title);
                 publicationElement.appendChild(description);
                 searchResults.appendChild(publicationElement);
+                foundResults = true;
             }
         });
 
         // Fikarohana services (azonao atao ny manampy fizarana iray misaraka na mametraka ao anatin'ny publication ihany koa ny services)
+
+        if (!foundResults) {
+            const noResultsElement = document.createElement("p");
+            noResultsElement.textContent = "Aucune résultat trouvé.";
+            searchResults.appendChild(noResultsElement);
+        } else {
+            const similarResultsElement = document.createElement("p");
+            similarResultsElement.textContent = "Résultats similaires trouvés.";
+            searchResults.appendChild(similarResultsElement);
+        }
     });
 
     // Ohatra: mampiditra publication amin'ny data feno
