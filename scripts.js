@@ -63,3 +63,54 @@ document.addEventListener("DOMContentLoaded", function() {
         publicationForm.reset();
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const publicationForm = document.getElementById("publicationForm");
+    const publicationsSection = document.getElementById("publications");
+
+    publicationForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Fisorohana ny fisehoan'ny pejy
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const imageInput = document.getElementById("image");
+        const videoInput = document.getElementById("video");
+
+        const publication = document.createElement("div");
+        publication.classList.add("publication");
+
+        const publicationTitle = document.createElement("h3");
+        publicationTitle.textContent = title;
+
+        const publicationDescription = document.createElement("p");
+        publicationDescription.textContent = description;
+
+        publication.appendChild(publicationTitle);
+        publication.appendChild(publicationDescription);
+
+        if (imageInput.files && imageInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const image = document.createElement("img");
+                image.src = e.target.result;
+                image.alt = title;
+                publication.appendChild(image);
+            }
+            reader.readAsDataURL(imageInput.files[0]);
+        }
+
+        if (videoInput.files && videoInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const video = document.createElement("video");
+                video.src = e.target.result;
+                video.controls = true;
+                publication.appendChild(video);
+            }
+            reader.readAsDataURL(videoInput.files[0]);
+        }
+
+        publicationsSection.appendChild(publication);
+
+        // Mamerina ny formulaire
+        publicationForm.reset();
+    });
+});
