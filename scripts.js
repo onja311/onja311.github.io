@@ -4,11 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const logoutButton = document.getElementById("logoutButton");
     const loginSection = document.getElementById("loginSection");
     const loginForm = document.getElementById("loginForm");
-    const registerSection = document.getElementById("registerSection");
+    const registerSection = document.getElementId("registerSection");
     const registerForm = document.getElementById("registerForm");
     const successMessage = document.getElementById("successMessage");
     const loginLink = document.getElementById("loginLink");
     const forgotPassword = document.getElementById("forgotPassword");
+    const publicationFormSection = document.getElementById("publicationFormSection");
     const publicationForm = document.getElementById("publicationForm");
     const publicationsSection = document.getElementById("publications");
 
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         loginSection.style.display = "block";
         registerSection.style.display = "none";
         successMessage.style.display = "none";
-        publicationForm.style.display = "none";
+        publicationFormSection.style.display = "none";
         publicationsSection.style.display = "none";
     });
 
@@ -24,25 +25,20 @@ document.addEventListener("DOMContentLoaded", function() {
         registerSection.style.display = "block";
         loginSection.style.display = "none";
         successMessage.style.display = "none";
-        publicationForm.style.display = "none";
+        publicationFormSection.style.display = "none";
         publicationsSection.style.display = "none";
     });
 
     loginForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
-        loginSection.style.display = "none";
-        loginButton.style.display = "none";
-        registerButton.style.display = "none";
-        logoutButton.style.display = "block";
-        publicationForm.style.display = "block";
-        publicationsSection.style.display = "block";
+        window.location.href = "profile.html"; // Redirect mankany amin'ny pejy profil
     });
 
     registerForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         registerSection.style.display = "none";
         successMessage.style.display = "block";
-        publicationForm.style.display = "none";
+        publicationFormSection.style.display = "none";
         publicationsSection.style.display = "none";
     });
 
@@ -55,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         loginButton.style.display = "block";
         registerButton.style.display = "block";
         logoutButton.style.display = "none";
-        publicationForm.style.display = "none";
+        publicationFormSection.style.display = "none";
         publicationsSection.style.display = "none";
     });
 
