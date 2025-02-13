@@ -6,12 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginForm = document.getElementById("loginForm");
     const registerSection = document.getElementById("registerSection");
     const registerForm = document.getElementById("registerForm");
+    const successMessage = document.getElementById("successMessage");
+    const loginLink = document.getElementById("loginLink");
+    const forgotPassword = document.getElementById("forgotPassword");
     const publicationForm = document.getElementById("publicationForm");
     const publicationsSection = document.getElementById("publications");
 
     loginButton.addEventListener("click", function() {
         loginSection.style.display = "block";
         registerSection.style.display = "none";
+        successMessage.style.display = "none";
         publicationForm.style.display = "none";
         publicationsSection.style.display = "none";
     });
@@ -19,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     registerButton.addEventListener("click", function() {
         registerSection.style.display = "block";
         loginSection.style.display = "none";
+        successMessage.style.display = "none";
         publicationForm.style.display = "none";
         publicationsSection.style.display = "none";
     });
@@ -36,11 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
     registerForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         registerSection.style.display = "none";
-        loginButton.style.display = "none";
-        registerButton.style.display = "none";
-        logoutButton.style.display = "block";
-        publicationForm.style.display = "block";
-        publicationsSection.style.display = "block";
+        successMessage.style.display = "block";
+        publicationForm.style.display = "none";
+        publicationsSection.style.display = "none";
+    });
+
+    loginLink.addEventListener("click", function() {
+        successMessage.style.display = "none";
+        loginSection.style.display = "block";
     });
 
     logoutButton.addEventListener("click", function() {
@@ -49,6 +57,10 @@ document.addEventListener("DOMContentLoaded", function() {
         logoutButton.style.display = "none";
         publicationForm.style.display = "none";
         publicationsSection.style.display = "none";
+    });
+
+    forgotPassword.addEventListener("click", function() {
+        alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
     });
 
     publicationForm.addEventListener("submit", function(event) {
