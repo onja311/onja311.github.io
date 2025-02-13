@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const profileForm = document.getElementById("profileForm");
-    const nextPageLink = document.getElementById("nextPageLink");
 
     profileForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fanaterana
