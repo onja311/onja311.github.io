@@ -20,3 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
         element.classList.add("visible");
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll(".fade-in");
+    elements.forEach(element => {
+        element.classList.add("visible");
+    });
+});
