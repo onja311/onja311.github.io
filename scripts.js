@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fisorohana ny safidy fiteny
     languageSelector.addEventListener("change", function(event) {
         const selectedLanguage = event.target.value;
-        // Add code here to handle language change
         alert("Langue sélectionnée: " + selectedLanguage);
         // Mampiditra ny fiovan'ny fiteny amin'ny tranonkala
         if (selectedLanguage === "fr") {
@@ -57,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("label[for='newUsername']").textContent = "Nom d'utilisateur:";
             document.querySelector("label[for='newEmail']").textContent = "Email:";
             document.querySelector("label[for='newPassword']").textContent = "Mot de passe:";
+            document.querySelector("label[for='fullName']").textContent = "Nom complet:";
+            document.querySelector("label[for='phoneNumber']").textContent = "Numéro de téléphone:";
+            document.querySelector("label[for='age']").textContent = "Âge:";
+            document.querySelector("label[for='location']").textContent = "Lieu de résidence:";
             document.querySelector("input[type='submit'][value='S'inscrire']").value = "S'inscrire";
             document.querySelector("p a#loginLink").textContent = "Se connecter";
             document.querySelector("p:contains('Déjà un compte?')").textContent = "Déjà un compte?";
@@ -74,6 +77,10 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("label[for='newUsername']").textContent = "Username:";
             document.querySelector("label[for='newEmail']").textContent = "Email:";
             document.querySelector("label[for='newPassword']").textContent = "Password:";
+            document.querySelector("label[for='fullName']").textContent = "Full Name:";
+            document.querySelector("label[for='phoneNumber']").textContent = "Phone Number:";
+            document.querySelector("label[for='age']").textContent = "Age:";
+            document.querySelector("label[for='location']").textContent = "Location:";
             document.querySelector("input[type='submit'][value='S'inscrire']").value = "Register";
             document.querySelector("p a#loginLink").textContent = "Login";
             document.querySelector("p:contains('Déjà un compte?')").textContent = "Already have an account?";
@@ -91,6 +98,10 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("label[for='newUsername']").textContent = "Anaran'ny mpampiasa:";
             document.querySelector("label[for='newEmail']").textContent = "Email:";
             document.querySelector("label[for='newPassword']").textContent = "Tenimiafina:";
+            document.querySelector("label[for='fullName']").textContent = "Anarana feno:";
+            document.querySelector("label[for='phoneNumber']").textContent = "Nomerao finday:";
+            document.querySelector("label[for='age']").textContent = "Taona:";
+            document.querySelector("label[for='location']").textContent = "Toerana ipetrahana:";
             document.querySelector("input[type='submit'][value='S'inscrire']").value = "Hisoratra anarana";
             document.querySelector("p a#loginLink").textContent = "Hiditra";
             document.querySelector("p:contains('Déjà un compte?')").textContent = "Efa manana kaonty?";
