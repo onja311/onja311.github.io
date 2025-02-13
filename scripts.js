@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     forgotPassword.addEventListener("click", function(event) {
-        event.prevent.prevent.preventDefault();
+        event.prevent.preventDefault();
         alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
     });
 });
