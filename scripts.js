@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     registerForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        event.preventPreventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         alert("Inscription réussie!");
         // Ampidiro eto ny kaody mba handraketana ny fisoratana anarana sy hikirakira ny fidirana amin'ny pejy famoronana profil
         window.location.href = "profile.html";
