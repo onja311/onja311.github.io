@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const loginSection = document.getElementById("loginSection");
-    const registerSection = document.getElementById("registerSection");
+    const registerSection = document.getElementId("registerSection");
     const loginForm = document.getElementById("loginForm");
     const registerForm = document.getElementById("registerForm");
     const loginLink = document.getElementById("loginLink");
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     registerForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        event.preventPreventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         alert("Inscription réussie!");
         // Add code here to handle registration and redirect to the member page
     });
