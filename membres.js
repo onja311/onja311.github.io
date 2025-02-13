@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("searchInput");
     const searchButton = document.getElementById("searchButton");
     const searchResults = document.getElementById("searchResults");
+    const publicationForm = document.getElementById("publicationForm");
+    const publicationsContainer = document.getElementById("publications");
 
     logoutButton.addEventListener("click", function() {
         window.location.href = "index.html";
@@ -76,8 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Ohatra: mampiditra publication amin'ny data feno
-    const publicationsContainer = document.getElementById("publications");
+    // Mametaka ny publication amin'ny data feno
     const publications = [
         { title: "Publication 1", description: "Description de la publication 1" },
         { title: "Publication 2", description: "Description de la publication 2" },
@@ -95,7 +96,56 @@ document.addEventListener("DOMContentLoaded", function() {
         publicationsContainer.appendChild(publicationElement);
     });
 
-    // Ohatra: mampiditra lisitry ny mpikambana miaraka amin'ny fiasa s'uivre (follow)
+    // Famoahana publication vaovao
+    publicationForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Fisorohana ny fisehoan'ny pejy
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const imageInput = document.getElementById("image");
+        const videoInput = document.getElementById("video");
+
+        const publication = document.createElement("div");
+        publication.classList.add("publication");
+
+        const publicationTitle = document.createElement("h3");
+        publicationTitle.textContent = title;
+
+        const publicationDescription = document.createElement("p");
+        publicationDescription.textContent = description;
+
+        publication.appendChild(publicationTitle);
+        publication.appendChild(publicationDescription);
+
+        if (imageInput.files && imageInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const image = document.createElement("img");
+                image.src = e.target.result;
+                image.alt = title;
+                publication.appendChild(image);
+            };
+            reader.readAsDataURL(imageInput.files[0]);
+        }
+
+        if (videoInput.files && videoInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const video = document.createElement("video");
+                video.src = e.target.result;
+                video.controls = true;
+                publication.appendChild(video);
+            };
+            reader.readAsDataURL(videoInput.files[0]);
+        }
+
+        // Mampiditra publication amin'ny lisitra
+        publicationsContainer.appendChild(publication);
+
+        // Mamerina ny formulaire
+        publicationForm.reset();
+    });
+
+    // Mametaka lisitry ny mpikambana miaraka amin'ny fiasa s'uivre (follow)
     const membersContainer = document.getElementById("members");
     const members = [
         { name: "Mpikambana 1", bio: "Bio an'i Mpikambana 1" },
@@ -121,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
         membersContainer.appendChild(memberElement);
     });
 
-    // Ohatra: mampiditra sary
+    // Mametaka sary
     const photosContainer = document.getElementById("photos");
     const photos = [
         "photo1.jpg",
@@ -134,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
         photosContainer.appendChild(img);
     });
 
-    // Ohatra: mampiditra parametres du compte
+    // Mametaka parametres du compte
     const accountSettingsContainer = document.getElementById("accountSettings");
     const settings = [
         { setting: "Changement de mot de passe" },
