@@ -17,3 +17,9 @@ function showMessage(message) {
 document.addEventListener("DOMContentLoaded", function() {
     alert("Bienvenue sur notre plateforme de vente en ligne!");
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll(".fade-in");
+    elements.forEach(element => {
+        element.classList.add("visible");
+    });
+});
