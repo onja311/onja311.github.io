@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     registerForm.addEventListener("submit", function(event) {
-        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        event.prevent.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         const newUsername = document.getElementById("newUsername").value;
         const newEmail = document.getElementById("newEmail").value;
         const newPassword = document.getElementById("newPassword").value;
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     forgotPassword.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.prevent.prevent.preventDefault();
         alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
     });
 
