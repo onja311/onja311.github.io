@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     registerLink.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.prevent.preventDefault();
         loginSection.style.display = "none";
         registerSection.style.display = "block";
         console.log("Switched to register section");
     });
 
     loginForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
+        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
         console.log("Login attempt with username: ", username);
@@ -79,19 +79,5 @@ document.addEventListener("DOMContentLoaded", function() {
     forgotPassword.addEventListener("click", function(event) {
         event.preventDefault();
         alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
-    });
-
-    // Ampiasao ny MutationObserver fa tsy ny DOMNodeInsertedIntoDocument
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.type === "childList") {
-                console.log("Child nodes have been added or removed.");
-            }
-        });
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
     });
 });
