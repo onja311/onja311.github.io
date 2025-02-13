@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     loginForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
+        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
