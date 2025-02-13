@@ -9,52 +9,38 @@
 <body>
     <header>
         <h1>Bienvenue à l'Espace Membre</h1>
-        <button id="loginButton">Se connecter</button>
-        <button id="logoutButton" style="display:none;">Déconnecter</button>
+        <button id="logoutButton">Déconnecter</button>
     </header>
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="a-propos.html">A propos</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="membre.html">Espace Membre</a></li>
+            <li><a href="profile.html">Profil</a></li>
         </ul>
     </nav>
     <main>
         <section>
-            <h2>Vos Avantages en Tant que Membre</h2>
-            <p>En tant que membre, vous bénéficiez d'avantages exclusifs, de réductions, et d'accès à du contenu spécial.</p>
-        </section>
-        <section id="loginSection" style="display:none;">
-            <h2>Se connecter</h2>
-            <form id="loginForm">
-                <label for="username">Nom d'utilisateur ou Email ou Numéro de téléphone:</label>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="password">Mot de passe:</label>
-                <input type="password" id="password" name="password" required><br><br>
-                <input type="submit" value="Connexion">
-            </form>
+            <h2>Vos Publications</h2>
+            <div id="publications">
+                <!-- Publications no aseho eto -->
+            </div>
         </section>
         <section>
-            <h2>Publier Votre Service ou Produit</h2>
-            <form id="publicationForm" style="display:none;">
-                <label for="title">Titre:</label>
-                <input type="text" id="title" name="title" required><br><br>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4" required></textarea><br><br>
-                <label for="image">Image:</label>
-                <input type="file" id="image" name="image" accept="image/*"><br><br>
-                <label for="video">Vidéo:</label>
-                <input type="file" id="video" name="video" accept="video/*"><br><br>
-                <input type="submit" value="Publier">
-            </form>
+            <h2>Membres</h2>
+            <div id="members">
+                <!-- Lisitry ny mpikambana no aseho eto -->
+            </div>
         </section>
-        <section id="publications" style="display:none;">
-            <h2>Publications des Membres</h2>
-            <!-- Teo no hampisehoana ireo publication avy amin'ny mpikambana -->
+        <section>
+            <h2>Sary</h2>
+            <div id="photos">
+                <!-- Sary no aseho eto -->
+            </div>
+        </section>
+        <section>
+            <h2>Parametres du Compte</h2>
+            <div id="accountSettings">
+                <!-- Parametres du compte no aseho eto -->
+            </div>
         </section>
     </main>
     <footer>
@@ -64,6 +50,6 @@
             <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
         </p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="membre.js"></script>
 </body>
 </html>
