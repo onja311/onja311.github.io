@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const forgotPassword = document.getElementById("forgotPassword");
     const languageSelector = document.getElementById("languageSelector");
 
+    // Ampidiro ny lisitry ny mpikambana voasoratra anarana
+    let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
     loginLink.addEventListener("click", function(event) {
         event.preventDefault();
         loginSection.style.display = "block";
@@ -22,15 +25,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
     loginForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
-        alert("Connexion réussie!");
-        // Ampidiro eto ny kaody mba handraketana ny fidirana sy hikirakira ny fidirana amin'ny pejy
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Ampidiro ny kaody mba hanamarinana ny mpikambana raha tena voasoratra anarana ao amin'ny site
+        const user = registeredUsers.find(user => (user.username === username || user.email === username) && user.password === password);
+
+        if (user) {
+            alert("Connexion réussie!");
+            // Redirect amin'ny pejy rehefa tafiditra ny mpampiasa
+            window.location.href = "profile.html"; // Aza adino fa mila soloina pejy mety ho redirect 
+        } else {
+            alert("Nom d'utilisateur ou mot de passe incorrect.");
+        }
     });
 
     registerForm.addEventListener("submit", function(event) {
-        event.preventPreventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        const newUsername = document.getElementById("newUsername").value;
+        const newEmail = document.getElementById("newEmail").value;
+        const newPassword = document.getElementById("newPassword").value;
+        const fullName = document.getElementById("fullName").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const age = document.getElementById("age").value;
+        const location = document.getElementById("location").value;
+
+        // Ampidiro ny angona voasoratra anarana ao amin'ny lisitra
+        const newUser = {
+            username: newUsername,
+            email: newEmail,
+            password: newPassword,
+            fullName: fullName,
+            phoneNumber: phoneNumber,
+            age: age,
+            location: location
+        };
+
+        registeredUsers.push(newUser);
+        localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+
         alert("Inscription réussie!");
-        // Ampidiro eto ny kaody mba handraketana ny fisoratana anarana sy hikirakira ny fidirana amin'ny pejy famoronana profil
-        window.location.href = "profile.html";
+        // Redirect amin'ny pejy famoronana profil rehefa tafiditra ny mpampiasa
+        window.location.href = "profile.html"; 
     });
 
     forgotPassword.addEventListener("click", function(event) {
