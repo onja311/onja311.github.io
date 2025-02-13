@@ -19,18 +19,15 @@
     </nav>
     <main>
         <section>
-            <h2>Publier Votre Service ou Produit</h2>
-            <form id="publicationForm">
-                <label for="title">Titre:</label>
-                <input type="text" id="title" name="title" required><br><br>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4" required></textarea><br><br>
-                <label for="image">Image:</label>
-                <input type="file" id="image" name="image" accept="image/*"><br><br>
-                <label for="video">Vidéo:</label>
-                <input type="file" id="video" name="video" accept="video/*"><br><br>
-                <input type="submit" value="Publier">
-            </form>
+            <h2>Recherche</h2>
+            <input type="text" id="searchInput" placeholder="Recherchez des membres, produits ou services...">
+            <button id="searchButton">Rechercher</button>
+        </section>
+        <section>
+            <h2>Résultats de la Recherche</h2>
+            <div id="searchResults">
+                <!-- Résultats de la recherche no aseho eto -->
+            </div>
         </section>
         <section>
             <h2>Vos Publications</h2>
