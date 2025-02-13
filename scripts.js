@@ -1,69 +1,141 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Membre</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Bienvenue à l'Espace Membre</h1>
-        <button id="loginButton">Se connecter</button>
-        <button id="logoutButton" style="display:none;">Déconnecter</button>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="a-propos.html">A propos</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="membre.html">Espace Membre</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Vos Avantages en Tant que Membre</h2>
-            <p>En tant que membre, vous bénéficiez d'avantages exclusifs, de réductions, et d'accès à du contenu spécial.</p>
-        </section>
-        <section id="loginSection" style="display:none;">
-            <h2>Se connecter</h2>
-            <form id="loginForm">
-                <label for="username">Nom d'utilisateur:</label>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="password">Mot de passe:</label>
-                <input type="password" id="password" name="password" required><br><br>
-                <input type="submit" value="Connexion">
-            </form>
-        </section>
-        <section>
-            <h2>Publier Votre Service ou Produit</h2>
-            <form id="publicationForm" style="display:none;">
-                <label for="title">Titre:</label>
-                <input type="text" id="title" name="title" required><br><br>
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4" required></textarea><br><br>
-                <label for="image">Image:</label>
-                <input type="file" id="image" name="image" accept="image/*"><br><br>
-                <label for="video">Vidéo:</label>
-                <input type="file" id="video" name="video" accept="video/*"><br><br>
-                <input type="submit" value="Publier">
-            </form>
-        </section>
-        <section id="publications" style="display:none;">
-            <h2>Publications des Membres</h2>
-            <!-- Teo no hampisehoana ireo publication avy amin'ny mpikambana -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
-        <p>Contactez-nous: <a href="mailto:harisoaonja06@gmail.com">harisoaonja06@gmail.com</a></p>
-        <p>Suivez-nous: 
-            <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
-        </p>
-    </footer>
-    <script src="scripts.js"></script>
-</body>
-</html>
+document.addEventListener("DOMContentLoaded", function() {
+    const loginButton = document.getElementById("loginButton");
+    const logoutButton = document.getElementById("logoutButton");
+    const loginSection = document.getElementById("loginSection");
+    const loginForm = document.getElementById("loginForm");
+    const publicationForm = document.getElementById("publicationForm");
+    const publicationsSection = document.getElementById("publications");
+
+    loginButton.addEventListener("click", function() {
+        loginSection.style.display = "block";
+        publicationForm.style.display = "none";
+        publicationsSection.style.display = "none";
+    });
+
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
+        loginSection.style.display = "none";
+        loginButton.style.display = "none";
+        logoutButton.style.display = "block";
+        publicationForm.style.display = "block";
+        publicationsSection.style.display = "block";
+    });
+
+    logoutButton.addEventListener("click", function() {
+        loginButton.style.display = "block";
+        logoutButton.style.display = "none";
+        publicationForm.style.display = "none";
+        publicationsSection.style.display = "none";
+    });
+
+    publicationForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Fisorohana ny fisehoan'ny pejy
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const imageInput = document.getElementById("image");
+        const videoInput = document.getElementById("video");
+
+        const publication = document.createElement("div");
+        publication.classList.add("publication");
+
+        const publicationTitle = document.createElement("h3");
+        publicationTitle.textContent = title;
+
+        const publicationDescription = document.createElement("p");
+        publicationDescription.textContent = description;
+
+        publication.appendChild(publicationTitle);
+        publication.appendChild(publicationDescription);
+
+        if (imageInput.files && imageInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const image = document.createElement("img");
+                image.src = e.target.result;
+                image.alt = title;
+                publication.appendChild(image);
+            }
+            reader.readAsDataURL(imageInput.files[0]);
+        }
+
+        if (videoInput.files && videoInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const video = document.createElement("video");
+                video.src = e.target.result;
+                video.controls = true;
+                publication.appendChild(video);
+            }
+            reader.readAsDataURL(videoInput.files[0]);
+        }
+
+        const likesContainer = document.createElement("div");
+        likesContainer.classList.add("likes");
+
+        const likeButton = document.createElement("button");
+        likeButton.textContent = "J'aime";
+        let likeCount = 0;
+        const likeCounter = document.createElement("span");
+        likeCounter.textContent = ` (${likeCount})`;
+
+        likeButton.addEventListener("click", function() {
+            likeCount++;
+            likeCounter.textContent = ` (${likeCount})`;
+        });
+
+        const adoreButton = document.createElement("button");
+        adoreButton.textContent = "J'adore";
+        let adoreCount = 0;
+        const adoreCounter = document.createElement("span");
+        adoreCounter.textContent = ` (${adoreCount})`;
+
+        adoreButton.addEventListener("click", function() {
+            adoreCount++;
+            adoreCounter.textContent = ` (${adoreCount})`;
+        });
+
+        likesContainer.appendChild(likeButton);
+        likesContainer.appendChild(likeCounter);
+        likesContainer.appendChild(adoreButton);
+        likesContainer.appendChild(adoreCounter);
+
+        publication.appendChild(likesContainer);
+
+        const commentForm = document.createElement("form");
+        commentForm.classList.add("commentForm");
+        const commentLabel = document.createElement("label");
+        commentLabel.setAttribute("for", "comment");
+        commentLabel.textContent = "Commentaire:";
+        const commentInput = document.createElement("textarea");
+        commentInput.setAttribute("name", "comment");
+        commentInput.setAttribute("rows", "2");
+        commentInput.setAttribute("required", true);
+        const commentSubmit = document.createElement("input");
+        commentSubmit.setAttribute("type", "submit");
+        commentSubmit.setAttribute("value", "Envoyer");
+
+        commentForm.appendChild(commentLabel);
+        commentForm.appendChild(commentInput);
+        commentForm.appendChild(commentSubmit);
+
+        const commentsContainer = document.createElement("div");
+        commentsContainer.classList.add("comments");
+
+        commentForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const comment = commentInput.value;
+            const commentElement = document.createElement("p");
+            commentElement.textContent = comment;
+            commentsContainer.appendChild(commentElement);
+            commentInput.value = "";
+        });
+
+        publication.appendChild(commentForm);
+        publication.appendChild(commentsContainer);
+
+        publicationsSection.appendChild(publication);
+
+        // Mamerina ny formulaire
+        publicationForm.reset();
+    });
+});
