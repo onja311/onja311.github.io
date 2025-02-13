@@ -1,8 +1,66 @@
 document.addEventListener("DOMContentLoaded", function() {
     const logoutButton = document.getElementById("logoutButton");
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+    const searchResults = document.getElementById("searchResults");
 
     logoutButton.addEventListener("click", function() {
         window.location.href = "index.html";
+    });
+
+    searchButton.addEventListener("click", function() {
+        const query = searchInput.value.toLowerCase();
+        searchResults.innerHTML = ""; // Mamafa ny valiny teo aloha
+
+        // Fikarohana mpikambana
+        const membersContainer = document.getElementById("members");
+        const members = [
+            { name: "Mpikambana 1", bio: "Bio an'i Mpikambana 1" },
+            { name: "Mpikambana 2", bio: "Bio an'i Mpikambana 2" },
+        ];
+
+        members.forEach(function(member) {
+            if (member.name.toLowerCase().includes(query) || member.bio.toLowerCase().includes(query)) {
+                const memberElement = document.createElement("div");
+                const name = document.createElement("h3");
+                name.textContent = member.name;
+                const bio = document.createElement("p");
+                bio.textContent = member.bio;
+
+                const followButton = document.createElement("button");
+                followButton.textContent = "S'uivre";
+                followButton.addEventListener("click", function() {
+                    alert(`Vous suivez maintenant ${member.name}`);
+                });
+
+                memberElement.appendChild(name);
+                memberElement.appendChild(bio);
+                memberElement.appendChild(followButton);
+                searchResults.appendChild(memberElement);
+            }
+        });
+
+        // Fikarohana produits
+        const publications = [
+            { title: "Publication 1", description: "Description de la publication 1" },
+            { title: "Publication 2", description: "Description de la publication 2" },
+        ];
+
+        publications.forEach(function(publication) {
+            if (publication.title.toLowerCase().includes(query) || publication.description.toLowerCase().includes(query)) {
+                const publicationElement = document.createElement("div");
+                const title = document.createElement("h3");
+                title.textContent = publication.title;
+                const description = document.createElement("p");
+                description.textContent = publication.description;
+
+                publicationElement.appendChild(title);
+                publicationElement.appendChild(description);
+                searchResults.appendChild(publicationElement);
+            }
+        });
+
+        // Fikarohana services (azonao atao ny manampy fizarana iray misaraka na mametraka ao anatin'ny publication ihany koa ny services)
     });
 
     // Ohatra: mampiditra publication amin'ny data feno
