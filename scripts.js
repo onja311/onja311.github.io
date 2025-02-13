@@ -42,5 +42,58 @@ document.addEventListener("DOMContentLoaded", function() {
         const selectedLanguage = event.target.value;
         // Add code here to handle language change
         alert("Langue sélectionnée: " + selectedLanguage);
+        // Mampiditra ny fiovan'ny fiteny amin'ny tranonkala
+        if (selectedLanguage === "fr") {
+            document.documentElement.lang = "fr";
+            document.title = "Accueil";
+            document.querySelector("h1").textContent = "Bienvenue sur notre plateforme";
+            document.querySelector("label[for='username']").textContent = "Nom d'utilisateur ou Email:";
+            document.querySelector("label[for='password']").textContent = "Mot de passe:";
+            document.querySelector("input[type='submit'][value='Connexion']").value = "Connexion";
+            document.getElementById("forgotPassword").textContent = "Mot de passe oublié?";
+            document.querySelector("p a#registerLink").textContent = "S'inscrire";
+            document.querySelector("p:contains('Pas encore de compte?')").textContent = "Pas encore de compte?";
+            document.querySelector("h2:contains('S'inscrire')").textContent = "S'inscrire";
+            document.querySelector("label[for='newUsername']").textContent = "Nom d'utilisateur:";
+            document.querySelector("label[for='newEmail']").textContent = "Email:";
+            document.querySelector("label[for='newPassword']").textContent = "Mot de passe:";
+            document.querySelector("input[type='submit'][value='S'inscrire']").value = "S'inscrire";
+            document.querySelector("p a#loginLink").textContent = "Se connecter";
+            document.querySelector("p:contains('Déjà un compte?')").textContent = "Déjà un compte?";
+        } else if (selectedLanguage === "en") {
+            document.documentElement.lang = "en";
+            document.title = "Home";
+            document.querySelector("h1").textContent = "Welcome to our platform";
+            document.querySelector("label[for='username']").textContent = "Username or Email:";
+            document.querySelector("label[for='password']").textContent = "Password:";
+            document.querySelector("input[type='submit'][value='Connexion']").value = "Login";
+            document.getElementById("forgotPassword").textContent = "Forgot Password?";
+            document.querySelector("p a#registerLink").textContent = "Register";
+            document.querySelector("p:contains('Pas encore de compte?')").textContent = "Don't have an account yet?";
+            document.querySelector("h2:contains('S'inscrire')").textContent = "Register";
+            document.querySelector("label[for='newUsername']").textContent = "Username:";
+            document.querySelector("label[for='newEmail']").textContent = "Email:";
+            document.querySelector("label[for='newPassword']").textContent = "Password:";
+            document.querySelector("input[type='submit'][value='S'inscrire']").value = "Register";
+            document.querySelector("p a#loginLink").textContent = "Login";
+            document.querySelector("p:contains('Déjà un compte?')").textContent = "Already have an account?";
+        } else if (selectedLanguage === "mg") {
+            document.documentElement.lang = "mg";
+            document.title = "Fandraisana";
+            document.querySelector("h1").textContent = "Tongasoa eto amin'ny sehatra";
+            document.querySelector("label[for='username']").textContent = "Anaran'ny mpampiasa na Email:";
+            document.querySelector("label[for='password']").textContent = "Tenimiafina:";
+            document.querySelector("input[type='submit'][value='Connexion']").value = "Hiditra";
+            document.getElementById("forgotPassword").textContent = "Hadino ny tenimiafina?";
+            document.querySelector("p a#registerLink").textContent = "Hisoratra anarana";
+            document.querySelector("p:contains('Pas encore de compte?')").textContent = "Tsy manana kaonty?";
+            document.querySelector("h2:contains('S'inscrire')").textContent = "Hisoratra anarana";
+            document.querySelector("label[for='newUsername']").textContent = "Anaran'ny mpampiasa:";
+            document.querySelector("label[for='newEmail']").textContent = "Email:";
+            document.querySelector("label[for='newPassword']").textContent = "Tenimiafina:";
+            document.querySelector("input[type='submit'][value='S'inscrire']").value = "Hisoratra anarana";
+            document.querySelector("p a#loginLink").textContent = "Hiditra";
+            document.querySelector("p:contains('Déjà un compte?')").textContent = "Efa manana kaonty?";
+        }
     });
 });
