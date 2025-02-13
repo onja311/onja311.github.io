@@ -78,3 +78,89 @@
     </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="bounce">Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">A propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="produits" class="fade-in">
+            <h2>Nos Produits</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="OIP (2).jfif" alt="Produit 2">
+                    <div class="card-content">
+                        <h3>Produit 2</h3>
+                        <p>Explorez notre large gamme de produits adaptés à vos besoins.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="OIP (4).jfif" alt="Produit 4">
+                    <div class="card-content">
+                        <h3>Produit 4</h3>
+                        <p>Découvrez notre sélection de produits innovants pour faciliter votre quotidien.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="OIP (5).jfif" alt="Produit 5">
+                    <div class="card-content">
+                        <h3>Produit 5</h3>
+                        <p>Profitez de nos offres spéciales sur une variété de produits de qualité.</p>
+                    </div>
+                </div>
+                <!-- ...autres produits... -->
+            </div>
+        </section>
+        <section id="services" class="fade-in">
+            <h2>Nos Services</h2>
+            <p>Découvrez nos services personnalisés pour aider les entrepreneurs à réussir : conseil, mentorat, et plus encore.</p>
+        </section>
+        <section id="entrepreneurs" class="fade-in">
+            <h2>Entrepreneurs</h2>
+            <p>Rejoignez notre communauté d'entrepreneurs et partagez vos expériences, trouvez des partenaires, et développez votre réseau.</p>
+        </section>
+        <section id="devenir-membre" class="fade-in">
+            <h2>Devenir Membre</h2>
+            <p>Inscrivez-vous dès aujourd'hui pour bénéficier d'avantages exclusifs, de réductions, et bien plus encore.</p>
+            <form onsubmit="redirectToMembrePage(event)">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <input type="submit" value="Envoyer">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
+        <p>Contactez-nous: <a href="mailto:harisoaonja06@gmail.com">harisoaonja06@gmail.com</a></p>
+        <p>Suivez-nous: 
+            <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
+        </p>
+    </footer>
+    <script>
+        function redirectToMembrePage(event) {
+            event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
+            window.location.href = 'membre.html'; // Redirect ho amin'ny pejy membre.html
+        }
+    </script>
+</body>
+</html>
