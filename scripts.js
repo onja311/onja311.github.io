@@ -12,19 +12,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
 
     loginLink.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.preventPreventDefault();
         loginSection.style.display = "block";
         registerSection.style.display = "none";
     });
 
     registerLink.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.preventPreventDefault();
         loginSection.style.display = "none";
         registerSection.style.display = "block";
     });
 
     loginForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
+        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     forgotPassword.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.preventPreventDefault();
         alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
     });
 
