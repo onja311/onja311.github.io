@@ -9,7 +9,10 @@
 </head>
 <body>
     <header>
-        <h1 class="bounce">Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+        <h1>Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+        <button id="loginButton">Se connecter</button>
+        <button id="registerButton">S'inscrire</button>
+        <button id="logoutButton" style="display:none;">Déconnecter</button>
     </header>
     <nav>
         <ul>
@@ -22,7 +25,29 @@
         </ul>
     </nav>
     <main>
-        <section id="produits" class="fade-in">
+        <section id="loginSection" style="display:none;">
+            <h2>Se connecter</h2>
+            <form id="loginForm">
+                <label for="username">Nom d'utilisateur ou Email:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Connexion">
+            </form>
+        </section>
+        <section id="registerSection" style="display:none;">
+            <h2>S'inscrire</h2>
+            <form id="registerForm">
+                <label for="newUsername">Nom d'utilisateur:</label>
+                <input type="text" id="newUsername" name="newUsername" required><br><br>
+                <label for="newEmail">Email:</label>
+                <input type="email" id="newEmail" name="newEmail" required><br><br>
+                <label for="newPassword">Mot de passe:</label>
+                <input type="password" id="newPassword" name="newPassword" required><br><br>
+                <input type="submit" value="S'inscrire">
+            </form>
+        </section>
+        <section>
             <h2>Nos Produits</h2>
             <div class="grid-container">
                 <div class="grid-item">
@@ -46,27 +71,7 @@
                         <p>Profitez de nos offres spéciales sur une variété de produits de qualité.</p>
                     </div>
                 </div>
-                <!-- ...autres produits... -->
             </div>
-        </section>
-        <section id="services" class="fade-in">
-            <h2>Nos Services</h2>
-            <p>Découvrez nos services personnalisés pour aider les entrepreneurs à réussir : conseil, mentorat, et plus encore.</p>
-        </section>
-        <section id="entrepreneurs" class="fade-in">
-            <h2>Entrepreneurs</h2>
-            <p>Rejoignez notre communauté d'entrepreneurs et partagez vos expériences, trouvez des partenaires, et développez votre réseau.</p>
-        </section>
-        <section id="devenir-membre" class="fade-in">
-            <h2>Devenir Membre</h2>
-            <p>Inscrivez-vous dès aujourd'hui pour bénéficier d'avantages exclusifs, de réductions, et bien plus encore.</p>
-            <form onsubmit="redirectToMembrePage(event)">
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <input type="submit" value="Envoyer">
-            </form>
         </section>
     </main>
     <footer>
@@ -76,11 +81,6 @@
             <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
         </p>
     </footer>
-    <script>
-        function redirectToMembrePage(event) {
-            event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
-            window.location.href = 'membre.html'; // Redirect ho amin'ny pejy membre.html
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
