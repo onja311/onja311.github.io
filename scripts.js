@@ -2,10 +2,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginButton = document.getElementById("loginButton");
     const registerButton = document.getElementById("registerButton");
     const logoutButton = document.getElementById("logoutButton");
-    const profileForm = document.getElementById("profileForm");
+    const loginSection = document.getElementById("loginSection");
+    const loginForm = document.getElementById("loginForm");
+    const registerSection = document.getElementById("registerSection");
+    const registerForm = document.getElementById("registerForm");
+    const successMessage = document.getElementById("successMessage");
+    const loginLink = document.getElementById("loginLink");
+    const forgotPassword = document.getElementById("forgotPassword");
+    const publicationFormSection = document.getElementById("publicationFormSection");
+    const publicationsSection = document.getElementById("publications");
+    const navMenu = document.getElementById("navMenu");
 
     loginButton.addEventListener("click", function() {
-        loginSection.style.display = "none";
+        loginSection.style.display = "block";
         registerSection.style.display = "none";
         successMessage.style.display = "none";
         publicationFormSection.style.display = "none";
@@ -20,17 +29,49 @@ document.addEventListener("DOMContentLoaded", function() {
         publicationsSection.style.display = "none";
     });
 
-    profileForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoan'ny pejy
-        window.location.href = "membre.html"; // Redirect mankany amin'ny pejy membre rehefa voarakitra ny profil
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
+        loginSection.style.display = "none";
+        loginButton.style.display = "none";
+        registerButton.style.display = "none";
+        logoutButton.style.display = "block";
+        publicationFormSection.style.display = "block";
+        publicationsSection.style.display = "block";
+
+        // Mise à jour ny navigation
+        navMenu.querySelector('a[href="profile.html"]').style.display = "inline";
+        navMenu.querySelector('a[href="recherche.html"]').style.display = "inline";
+        navMenu.querySelector('a[href="publications.html"]').style.display = "inline";
+        navMenu.querySelector('a[href="messages.html"]').style.display = "inline";
+        navMenu.querySelector('a[href="notifications.html"]').style.display = "inline";
+    });
+
+    registerForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        registerSection.style.display = "none";
+        successMessage.style.display = "block";
+        publicationFormSection.style.display = "none";
+        publicationsSection.style.display = "none";
+    });
+
+    loginLink.addEventListener("click", function() {
+        successMessage.style.display = "none";
+        loginSection.style.display = "block";
     });
 
     logoutButton.addEventListener("click", function() {
         loginButton.style.display = "block";
         registerButton.style.display = "block";
         logoutButton.style.display = "none";
-        profileForm.style.display = "none";
+        publicationFormSection.style.display = "none";
         publicationsSection.style.display = "none";
+
+        // Fanavaozana ny navigation
+        navMenu.querySelector('a[href="profile.html"]').style.display = "none";
+        navMenu.querySelector('a[href="recherche.html"]').style.display = "none";
+        navMenu.querySelector('a[href="publications.html"]').style.display = "none";
+        navMenu.querySelector('a[href="messages.html"]').style.display = "none";
+        navMenu.querySelector('a[href="notifications.html"]').style.display = "none";
     });
 
     forgotPassword.addEventListener("click", function() {
