@@ -3,29 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer Mon Profil</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="profile.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Créer Mon Profil</h1>
+        <h1>Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+        <button id="loginButton">Se connecter</button>
+        <button id="registerButton">S'inscrire</button>
         <button id="logoutButton" style="display:none;">Déconnecter</button>
     </header>
+    <nav>
+        <ul id="navMenu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="profile.html" style="display:none;">Profil</a></li>
+            <li><a href="recherche.html" style="display:none;">Recherche</a></li>
+            <li><a href="publications.html" style="display:none;">Publications</a></li>
+            <li><a href="messages.html" style="display:none;">Messages</a></li>
+            <li><a href="notifications.html" style="display:none;">Notifications</a></li>
+        </ul>
+    </nav>
     <main>
-        <section>
-            <h2>Créer ou Mettre à Jour Votre Profil</h2>
-            <form id="profileForm">
-                <label for="fullName">Nom complet:</label>
-                <input type="text" id="fullName" name="fullName" required><br><br>
-                <label for="phoneNumber">Numéro de téléphone:</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
-                <label for="bio">Biographie:</label>
-                <textarea id="bio" name="bio" rows="4" required></textarea><br><br>
-                <label for="profilePicture">Photo de profil:</label>
-                <input type="file" id="profilePicture" name="profilePicture" accept="image/*"><br><br>
-                <input type="submit" value="Enregistrer">
+        <section id="loginSection" style="display:none;">
+            <h2>Se connecter</h2>
+            <form id="loginForm">
+                <label for="username">Nom d'utilisateur ou Email:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <a href="#" id="forgotPassword">Mot de passe oublié?</a><br><br>
+                <input type="submit" value="Connexion">
             </form>
+        </section>
+        <section id="registerSection" style="display:none;">
+            <h2>S'inscrire</h2>
+            <form id="registerForm">
+                <label for="newUsername">Nom d'utilisateur:</label>
+                <input type="text" id="newUsername" name="newUsername" required><br><br>
+                <label for="newEmail">Email:</label>
+                <input type="email" id="newEmail" name="newEmail" required><br><br>
+                <label for="newPassword">Mot de passe:</label>
+                <input type="password" id="newPassword" name="newPassword" required><br><br>
+                <input type="submit" value="S'inscrire">
+            </form>
+        </section>
+        <section id="successMessage" style="display:none;">
+            <h2>Félicitations!</h2>
+            <p>Vous êtes inscrit avec succès. Veuillez vous <a href="#" id="loginLink">connecter</a> pour accéder à la plateforme.</p>
+        </section>
+        <section id="publicationFormSection" style="display:none;">
+            <h2>Publier Votre Service ou Produit</h2>
+            <form id="publicationForm">
+                <label for="title">Titre:</label>
+                <input type="text" id="title" name="title" required><br><br>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea><br><br>
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*"><br><br>
+                <label for="video">Vidéo:</label>
+                <input type="file" id="video" name="video" accept="video/*"><br><br>
+                <input type="submit" value="Publier">
+            </form>
+        </section>
+        <section id="publications" style="display:none;">
+            <h2>Publications des Membres</h2>
+            <!-- Teo no hampisehoana ireo publication avy amin'ny mpikambana -->
+        </section>
+        <section>
+            <h2>Nos Produits</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="OIP (2).jfif" alt="Produit 2">
+                    <div class="card-content">
+                        <h3>Produit 2</h3>
+                        <p>Explorez notre large gamme de produits adaptés à vos besoins.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="OIP (4).jfif" alt="Produit 4">
+                    <div class="card-content">
+                        <h3>Produit 4</h3>
+                        <p>Découvrez notre sélection de produits innovants pour faciliter votre quotidien.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="OIP (5).jfif" alt="Produit 5">
+                    <div class="card-content">
+                        <h3>Produit 5</h3>
+                        <p>Profitez de nos offres spéciales sur une variété de produits de qualité.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -35,5 +104,6 @@
             <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
         </p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
