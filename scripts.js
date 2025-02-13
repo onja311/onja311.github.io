@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
 
     loginLink.addEventListener("click", function(event) {
-        event.preventPreventDefault();
+        event.prevent.preventDefault();
         loginSection.style.display = "block";
         registerSection.style.display = "none";
     });
 
     registerLink.addEventListener("click", function(event) {
-        event.preventPreventDefault();
+        event.prevent.preventDefault();
         loginSection.style.display = "none";
         registerSection.style.display = "block";
     });
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     forgotPassword.addEventListener("click", function(event) {
-        event.preventPreventDefault();
+        event.prevent.preventDefault();
         alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
     });
 
