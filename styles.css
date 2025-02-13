@@ -79,3 +79,11 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
