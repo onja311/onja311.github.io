@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+ 0   font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -65,4 +65,17 @@ section {
 
 .fade-in.visible {
     opacity: 1;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
