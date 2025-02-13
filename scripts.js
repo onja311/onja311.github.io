@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 image.src = e.target.result;
                 image.alt = title;
                 publication.appendChild(image);
-            }
+            };
             reader.readAsDataURL(imageInput.files[0]);
         }
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 video.src = e.target.result;
                 video.controls = true;
                 publication.appendChild(video);
-            }
+            };
             reader.readAsDataURL(videoInput.files[0]);
         }
 
