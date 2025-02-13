@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
             reader.readAsDataURL(profilePictureInput.files[0]);
         }
 
-        // Tehirizo ny angona profil any amin'ny console.log("Profil enregistré:", fullName, phoneNumber, bio, profilePictureURL);
+        // Tehirizo ny angona profil
+        console.log("Profil enregistré:", fullName, phoneNumber, bio, profilePictureURL);
         alert("Profil enregistré avec succès!");
 
         // Fampisehoana ny fizarana hafa
