@@ -1,13 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
     const loginButton = document.getElementById("loginButton");
+    const registerButton = document.getElementById("registerButton");
     const logoutButton = document.getElementById("logoutButton");
     const loginSection = document.getElementById("loginSection");
     const loginForm = document.getElementById("loginForm");
+    const registerSection = document.getElementById("registerSection");
+    const registerForm = document.getElementById("registerForm");
     const publicationForm = document.getElementById("publicationForm");
     const publicationsSection = document.getElementById("publications");
 
     loginButton.addEventListener("click", function() {
         loginSection.style.display = "block";
+        registerSection.style.display = "none";
+        publicationForm.style.display = "none";
+        publicationsSection.style.display = "none";
+    });
+
+    registerButton.addEventListener("click", function() {
+        registerSection.style.display = "block";
+        loginSection.style.display = "none";
         publicationForm.style.display = "none";
         publicationsSection.style.display = "none";
     });
@@ -16,6 +27,17 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
         loginSection.style.display = "none";
         loginButton.style.display = "none";
+        registerButton.style.display = "none";
+        logoutButton.style.display = "block";
+        publicationForm.style.display = "block";
+        publicationsSection.style.display = "block";
+    });
+
+    registerForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        registerSection.style.display = "none";
+        loginButton.style.display = "none";
+        registerButton.style.display = "none";
         logoutButton.style.display = "block";
         publicationForm.style.display = "block";
         publicationsSection.style.display = "block";
@@ -23,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     logoutButton.addEventListener("click", function() {
         loginButton.style.display = "block";
+        registerButton.style.display = "block";
         logoutButton.style.display = "none";
         publicationForm.style.display = "none";
         publicationsSection.style.display = "none";
