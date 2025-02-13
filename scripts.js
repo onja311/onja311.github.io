@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const loginSection = document.getElementById("loginSection");
-    const registerSection = document.getElementId("registerSection");
+    const registerSection = document.getElementById("registerSection");
     const loginForm = document.getElementById("loginForm");
     const registerForm = document.getElementById("registerForm");
     const loginLink = document.getElementById("loginLink");
@@ -23,13 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
     loginForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
         alert("Connexion réussie!");
-        // Add code here to handle login and redirect to the member page
+        // Ampidiro eto ny kaody mba handraketana ny fidirana sy hikirakira ny fidirana amin'ny pejy
     });
 
     registerForm.addEventListener("submit", function(event) {
-        event.preventPreventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         alert("Inscription réussie!");
-        // Add code here to handle registration and redirect to the member page
+        // Ampidiro eto ny kaody mba handraketana ny fisoratana anarana sy hikirakira ny fidirana amin'ny pejy famoronana profil
+        window.location.href = "profile.html";
     });
 
     forgotPassword.addEventListener("click", function(event) {
