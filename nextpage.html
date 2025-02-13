@@ -3,23 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Suivante</title>
+    <title>Plateforme</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #3b5998;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .left-sidebar, .right-sidebar {
+            width: 25%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            width: 50%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .post, .story, .event {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #3b5998;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Page Suivante</h1>
+        <h1>Ma Plateforme</h1>
     </header>
-    <main>
-        <p>Bienvenue sur la page suivante après la création de votre profil.</p>
-        <!-- Ampidiro eto ny fanazavana sy fiasa vaovao -->
-    </main>
+    <div class="container">
+        <div class="content">
+            <div class="left-sidebar">
+                <h2>Story</h2>
+                <div class="story">Ici, vous pouvez afficher votre story.</div>
+            </div>
+            <div class="main-content">
+                <h2>Publications</h2>
+                <div class="post">Publication 1</div>
+                <div class="post">Publication 2</div>
+                <div class="post">Publication 3</div>
+            </div>
+            <div class="right-sidebar">
+                <h2>Événements</h2>
+                <div class="event">Événement 1</div>
+                <div class="event">Événement 2</div>
+                <div class="event">Événement 3</div>
+            </div>
+        </div>
+    </div>
     <footer>
-        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
-        <p>Contactez-nous: <a href="mailto:harisoaonja06@gmail.com">harisoaonja06@gmail.com</a></p>
-        <p>Suivez-nous: 
-            <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
-        </p>
+        <p>&copy; 2025 Ma Plateforme. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
