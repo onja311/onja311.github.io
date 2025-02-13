@@ -1,55 +1,82 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Membre</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Bienvenue à l'Espace Membre</h1>
-        <button id="logoutButton">Déconnecter</button>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="profile.html">Profil</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Vos Publications</h2>
-            <div id="publications">
-                <!-- Publications no aseho eto -->
-            </div>
-        </section>
-        <section>
-            <h2>Membres</h2>
-            <div id="members">
-                <!-- Lisitry ny mpikambana no aseho eto -->
-            </div>
-        </section>
-        <section>
-            <h2>Sary</h2>
-            <div id="photos">
-                <!-- Sary no aseho eto -->
-            </div>
-        </section>
-        <section>
-            <h2>Parametres du Compte</h2>
-            <div id="accountSettings">
-                <!-- Parametres du compte no aseho eto -->
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
-        <p>Contactez-nous: <a href="mailto:harisoaonja06@gmail.com">harisoaonja06@gmail.com</a></p>
-        <p>Suivez-nous: 
-            <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
-        </p>
-    </footer>
-    <script src="membre.js"></script>
-</body>
-</html>
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.getElementById("logoutButton");
+
+    logoutButton.addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+
+    // Ohatra: mampiditra publication amin'ny data feno
+    const publicationsContainer = document.getElementById("publications");
+    const publications = [
+        { title: "Publication 1", description: "Description de la publication 1" },
+        { title: "Publication 2", description: "Description de la publication 2" },
+    ];
+
+    publications.forEach(function(publication) {
+        const publicationElement = document.createElement("div");
+        const title = document.createElement("h3");
+        title.textContent = publication.title;
+        const description = document.createElement("p");
+        description.textContent = publication.description;
+
+        publicationElement.appendChild(title);
+        publicationElement.appendChild(description);
+        publicationsContainer.appendChild(publicationElement);
+    });
+
+    // Ohatra: mampiditra lisitry ny mpikambana miaraka amin'ny fiasa s'uivre (follow)
+    const membersContainer = document.getElementById("members");
+    const members = [
+        { name: "Mpikambana 1", bio: "Bio an'i Mpikambana 1" },
+        { name: "Mpikambana 2", bio: "Bio an'i Mpikambana 2" },
+    ];
+
+    members.forEach(function(member) {
+        const memberElement = document.createElement("div");
+        const name = document.createElement("h3");
+        name.textContent = member.name;
+        const bio = document.createElement("p");
+        bio.textContent = member.bio;
+
+        const followButton = document.createElement("button");
+        followButton.textContent = "S'uivre";
+        followButton.addEventListener("click", function() {
+            // Kaody mba hanatanterahana ny fiasa s'uivre (follow)
+            alert(`Vous suivez maintenant ${member.name}`);
+        });
+
+        memberElement.appendChild(name);
+        memberElement.appendChild(bio);
+        memberElement.appendChild(followButton);
+        membersContainer.appendChild(memberElement);
+    });
+
+    // Ohatra: mampiditra sary
+    const photosContainer = document.getElementById("photos");
+    const photos = [
+        "photo1.jpg",
+        "photo2.jpg",
+    ];
+
+    photos.forEach(function(photo) {
+        const img = document.createElement("img");
+        img.src = photo;
+        photosContainer.appendChild(img);
+    });
+
+    // Ohatra: mampiditra parametres du compte
+    const accountSettingsContainer = document.getElementById("accountSettings");
+    const settings = [
+        { setting: "Changement de mot de passe" },
+        { setting: "Mise à jour de l'adresse email" },
+    ];
+
+    settings.forEach(function(setting) {
+        const settingElement = document.createElement("div");
+        const settingText = document.createElement("p");
+        settingText.textContent = setting.setting;
+
+        settingElement.appendChild(settingText);
+        accountSettingsContainer.appendChild(settingElement);
+    });
+});
