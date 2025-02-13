@@ -36,3 +36,30 @@ document.addEventListener("DOMContentLoaded", function() {
     opacity: 1;
     transform: translateX(0);
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const publicationForm = document.getElementById("publicationForm");
+    const publicationsSection = document.getElementById("publications");
+
+    publicationForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Fisorohana ny fisehoan'ny pejy
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+
+        const publication = document.createElement("div");
+        publication.classList.add("publication");
+
+        const publicationTitle = document.createElement("h3");
+        publicationTitle.textContent = title;
+
+        const publicationDescription = document.createElement("p");
+        publicationDescription.textContent = description;
+
+        publication.appendChild(publicationTitle);
+        publication.appendChild(publicationDescription);
+
+        publicationsSection.appendChild(publication);
+
+        // Mamerina ny formulaire
+        publicationForm.reset();
+    });
+});
