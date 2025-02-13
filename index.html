@@ -1,176 +1,113 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loginButton = document.getElementById("loginButton");
-    const registerButton = document.getElementById("registerButton");
-    const logoutButton = document.getElementById("logoutButton");
-    const loginSection = document.getElementById("loginSection");
-    const loginForm = document.getElementById("loginForm");
-    const registerSection = document.getElementById("registerSection");
-    const registerForm = document.getElementById("registerForm");
-    const successMessage = document.getElementById("successMessage");
-    const loginLink = document.getElementById("loginLink");
-    const forgotPassword = document.getElementById("forgotPassword");
-    const publicationForm = document.getElementById("publicationForm");
-    const publicationsSection = document.getElementById("publications");
-
-    loginButton.addEventListener("click", function() {
-        loginSection.style.display = "block";
-        registerSection.style.display = "none";
-        successMessage.style.display = "none";
-        publicationForm.style.display = "none";
-        publicationsSection.style.display = "none";
-    });
-
-    registerButton.addEventListener("click", function() {
-        registerSection.style.display = "block";
-        loginSection.style.display = "none";
-        successMessage.style.display = "none";
-        publicationForm.style.display = "none";
-        publicationsSection.style.display = "none";
-    });
-
-    loginForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
-        loginSection.style.display = "none";
-        loginButton.style.display = "none";
-        registerButton.style.display = "none";
-        logoutButton.style.display = "block";
-        publicationForm.style.display = "block";
-        publicationsSection.style.display = "block";
-    });
-
-    registerForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
-        registerSection.style.display = "none";
-        successMessage.style.display = "block";
-        publicationForm.style.display = "none";
-        publicationsSection.style.display = "none";
-    });
-
-    loginLink.addEventListener("click", function() {
-        successMessage.style.display = "none";
-        loginSection.style.display = "block";
-    });
-
-    logoutButton.addEventListener("click", function() {
-        loginButton.style.display = "block";
-        registerButton.style.display = "block";
-        logoutButton.style.display = "none";
-        publicationForm.style.display = "none";
-        publicationsSection.style.display = "none";
-    });
-
-    forgotPassword.addEventListener("click", function() {
-        alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
-    });
-
-    publicationForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Fisorohana ny fisehoan'ny pejy
-        const title = document.getElementById("title").value;
-        const description = document.getElementById("description").value;
-        const imageInput = document.getElementById("image");
-        const videoInput = document.getElementById("video");
-
-        const publication = document.createElement("div");
-        publication.classList.add("publication");
-
-        const publicationTitle = document.createElement("h3");
-        publicationTitle.textContent = title;
-
-        const publicationDescription = document.createElement("p");
-        publicationDescription.textContent = description;
-
-        publication.appendChild(publicationTitle);
-        publication.appendChild(publicationDescription);
-
-        if (imageInput.files && imageInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const image = document.createElement("img");
-                image.src = e.target.result;
-                image.alt = title;
-                publication.appendChild(image);
-            };
-            reader.readAsDataURL(imageInput.files[0]);
-        }
-
-        if (videoInput.files && videoInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const video = document.createElement("video");
-                video.src = e.target.result;
-                video.controls = true;
-                publication.appendChild(video);
-            };
-            reader.readAsDataURL(videoInput.files[0]);
-        }
-
-        const likesContainer = document.createElement("div");
-        likesContainer.classList.add("likes");
-
-        const likeButton = document.createElement("button");
-        likeButton.textContent = "J'aime";
-        let likeCount = 0;
-        const likeCounter = document.createElement("span");
-        likeCounter.textContent = ` (${likeCount})`;
-
-        likeButton.addEventListener("click", function() {
-            likeCount++;
-            likeCounter.textContent = ` (${likeCount})`;
-        });
-
-        const adoreButton = document.createElement("button");
-        adoreButton.textContent = "J'adore";
-        let adoreCount = 0;
-        const adoreCounter = document.createElement("span");
-        adoreCounter.textContent = ` (${adoreCount})`;
-
-        adoreButton.addEventListener("click", function() {
-            adoreCount++;
-            adoreCounter.textContent = ` (${adoreCount})`;
-        });
-
-        likesContainer.appendChild(likeButton);
-        likesContainer.appendChild(likeCounter);
-        likesContainer.appendChild(adoreButton);
-        likesContainer.appendChild(adoreCounter);
-
-        publication.appendChild(likesContainer);
-
-        const commentForm = document.createElement("form");
-        commentForm.classList.add("commentForm");
-        const commentLabel = document.createElement("label");
-        commentLabel.setAttribute("for", "comment");
-        commentLabel.textContent = "Commentaire:";
-        const commentInput = document.createElement("textarea");
-        commentInput.setAttribute("name", "comment");
-        commentInput.setAttribute("rows", "2");
-        commentInput.setAttribute("required", true);
-        const commentSubmit = document.createElement("input");
-        commentSubmit.setAttribute("type", "submit");
-        commentSubmit.setAttribute("value", "Envoyer");
-
-        commentForm.appendChild(commentLabel);
-        commentForm.appendChild(commentInput);
-        commentForm.appendChild(commentSubmit);
-
-        const commentsContainer = document.createElement("div");
-        commentsContainer.classList.add("comments");
-
-        commentForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const comment = commentInput.value;
-            const commentElement = document.createElement("p");
-            commentElement.textContent = comment;
-            commentsContainer.appendChild(commentElement);
-            commentInput.value = "";
-        });
-
-        publication.appendChild(commentForm);
-        publication.appendChild(commentsContainer);
-
-        publicationsSection.appendChild(publication);
-
-        // Mamerina ny formulaire
-        publicationForm.reset();
-    });
-});
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur notre plateforme de vente en ligne et services pour entrepreneurs !</h1>
+        <button id="loginButton">Se connecter</button>
+        <button id="registerButton">S'inscrire</button>
+        <button id="logoutButton" style="display:none;">Déconnecter</button>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html">A propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="loginSection" style="display:none;">
+            <h2>Se connecter</h2>
+            <form id="loginForm">
+                <label for="username">Nom d'utilisateur ou Email:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <a href="#" id="forgotPassword">Mot de passe oublié?</a><br><br>
+                <input type="submit" value="Connexion">
+            </form>
+        </section>
+        <section id="registerSection" style="display:none;">
+            <h2>S'inscrire</h2>
+            <form id="registerForm">
+                <label for="newUsername">Nom d'utilisateur:</label>
+                <input type="text" id="newUsername" name="newUsername" required><br><br>
+                <label for="newEmail">Email:</label>
+                <input type="email" id="newEmail" name="newEmail" required><br><br>
+                <label for="newPassword">Mot de passe:</label>
+                <input type="password" id="newPassword" name="newPassword" required><br><br>
+                <label for="address">Adresse:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                <label for="birthdate">Date de naissance:</label>
+                <input type="date" id="birthdate" name="birthdate" required><br><br>
+                <input type="submit" value="S'inscrire">
+            </form>
+        </section>
+        <section id="successMessage" style="display:none;">
+            <h2>Félicitations!</h2>
+            <p>Vous êtes inscrit avec succès. Veuillez vous <a href="#" id="loginLink">connecter</a> pour accéder à la plateforme.</p>
+        </section>
+        <section id="publicationFormSection" style="display:none;">
+            <h2>Publier Votre Service ou Produit</h2>
+            <form id="publicationForm">
+                <label for="title">Titre:</label>
+                <input type="text" id="title" name="title" required><br><br>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea><br><br>
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*"><br><br>
+                <label for="video">Vidéo:</label>
+                <input type="file" id="video" name="video" accept="video/*"><br><br>
+                <input type="submit" value="Publier">
+            </form>
+        </section>
+        <section id="publications" style="display:none;">
+            <h2>Publications des Membres</h2>
+            <!-- Teo no hampisehoana ireo publication avy amin'ny mpikambana -->
+        </section>
+        <section>
+            <h2>Nos Produits</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="OIP (2).jfif" alt="Produit 2">
+                    <div class="card-content">
+                        <h3>Produit 2</h3>
+                        <p>Explorez notre large gamme de produits adaptés à vos besoins.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="OIP (4).jfif" alt="Produit 4">
+                    <div class="card-content">
+                        <h3>Produit 4</h3>
+                        <p>Découvrez notre sélection de produits innovants pour faciliter votre quotidien.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="OIP (5).jfif" alt="Produit 5">
+                    <div class="card-content">
+                        <h3>Produit 5</h3>
+                        <p>Profitez de nos offres spéciales sur une variété de produits de qualité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
+        <p>Contactez-nous: <a href="mailto:harisoaonja06@gmail.com">harisoaonja06@gmail.com</a></p>
+        <p>Suivez-nous: 
+            <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
+        </p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
