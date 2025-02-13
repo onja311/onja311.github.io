@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const followButton = document.createElement("button");
         followButton.textContent = "S'uivre";
         followButton.addEventListener("click", function() {
-            // Kaody mba hanatanterahana ny fiasa s'uivre (follow)
             alert(`Vous suivez maintenant ${member.name}`);
         });
 
