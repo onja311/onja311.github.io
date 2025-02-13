@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     registerForm.addEventListener("submit", function(event) {
-        event.prevent.prevent.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         const newUsername = document.getElementById("newUsername").value;
         const newEmail = document.getElementById("newEmail").value;
         const newPassword = document.getElementById("newPassword").value;
