@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginLink = document.getElementById("loginLink");
     const forgotPassword = document.getElementById("forgotPassword");
     const publicationFormSection = document.getElementById("publicationFormSection");
-    const publicationsSection = document.getElementById("publications");
+    const publicationsSection = document.getElementById("publicationsSection");
+    const notificationsSection = document.getElementById("notificationsSection");
     const navMenu = document.getElementById("navMenu");
 
     loginButton.addEventListener("click", function() {
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         successMessage.style.display = "none";
         publicationFormSection.style.display = "none";
         publicationsSection.style.display = "none";
+        notificationsSection.style.display = "none";
     });
 
     registerButton.addEventListener("click", function() {
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         successMessage.style.display = "none";
         publicationFormSection.style.display = "none";
         publicationsSection.style.display = "none";
+        notificationsSection.style.display = "none";
     });
 
     loginForm.addEventListener("submit", function(event) {
@@ -37,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         logoutButton.style.display = "block";
         publicationFormSection.style.display = "block";
         publicationsSection.style.display = "block";
+        notificationsSection.style.display = "block";
 
         // Mise à jour ny navigation
         navMenu.querySelector('a[href="profile.html"]').style.display = "inline";
@@ -67,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
             logoutButton.style.display = "none";
             publicationFormSection.style.display = "none";
             publicationsSection.style.display = "none";
+            notificationsSection.style.display = "none";
 
             // Fanavaozana ny navigation
             navMenu.querySelector('a[href="profile.html"]').style.display = "none";
