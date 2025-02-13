@@ -1,30 +1,37 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const profileForm = document.getElementById("profileForm");
-
-    profileForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fanaterana
-        const fullName = document.getElementById("fullName").value;
-        const job = document.getElementById("job").value;
-        const location = document.getElementById("location").value;
-        const product = document.getElementById("product").value;
-        const profilePictureInput = document.getElementById("profilePicture");
-
-        let profilePictureURL = "";
-        if (profilePictureInput.files && profilePictureInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                profilePictureURL = e.target.result;
-                // Ampidiro eto ny kaody mba hikirakira ny sary profil
-                alert("Profil enregistré avec succès!");
-                window.location.href = "nextpage.html"; // Redirect amin'ny pejy manaraka
-            };
-            reader.readAsDataURL(profilePictureInput.files[0]);
-        } else {
-            // Raha tsy misy sary dia mandeha tsotra izao ny alert sy redirect
-            alert("Profil enregistré avec succès!");
-            window.location.href = "nextpage.html"; // Redirect amin'ny pejy manaraka
-        }
-
-        console.log("Profil enregistré:", fullName, job, location, product, profilePictureURL);
-    });
-});
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ma Plateforme</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <aside class="left-sidebar">
+                <h2>Story</h2>
+                <div class="story">Ici, vous pouvez afficher votre story.</div>
+            </aside>
+            <main class="main-content">
+                <h2>Publications</h2>
+                <div class="post">Publication 1</div>
+                <div class="post">Publication 2</div>
+                <div class="post">Publication 3</div>
+            </main>
+            <aside class="right-sidebar">
+                <h2>Événements</h2>
+                <div class="event">Événement 1</div>
+                <div class="event">Événement 2</div>
+                <div class="event">Événement 3</div>
+            </aside>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ma Plateforme. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
