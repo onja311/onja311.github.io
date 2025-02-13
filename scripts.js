@@ -1,83 +1,55 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loginSection = document.getElementById("loginSection");
-    const registerSection = document.getElementById("registerSection");
-    const loginForm = document.getElementById("loginForm");
-    const registerForm = document.getElementById("registerForm");
-    const loginLink = document.getElementById("loginLink");
-    const registerLink = document.getElementById("registerLink");
-    const forgotPassword = document.getElementById("forgotPassword");
-
-    // Ampidiro ny lisitry ny mpikambana voasoratra anarana
-    let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
-    console.log("Registered users loaded: ", registeredUsers);
-
-    loginLink.addEventListener("click", function(event) {
-        event.prevent.preventDefault();
-        loginSection.style.display = "block";
-        registerSection.style.display = "none";
-        console.log("Switched to login section");
-    });
-
-    registerLink.addEventListener("click", function(event) {
-        event.prevent.preventDefault();
-        loginSection.style.display = "none";
-        registerSection.style.display = "block";
-        console.log("Switched to register section");
-    });
-
-    loginForm.addEventListener("submit", function(event) {
-        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        console.log("Login attempt with username: ", username);
-
-        // Ampidiro ny kaody mba hanamarinana ny mpikambana raha tena voasoratra anarana ao amin'ny site
-        const user = registeredUsers.find(user => (user.username === username || user.email === username) && user.password === password);
-
-        if (user) {
-            alert("Connexion réussie!");
-            console.log("Login successful for user: ", user.username);
-            // Redirect amin'ny pejy rehefa tafiditra ny mpampiasa
-            window.location.href = "profile.html"; // Aza adino fa mila soloina pejy mety ho redirect 
-        } else {
-            alert("Nom d'utilisateur ou mot de passe incorrect.");
-            console.log("Login failed for username: ", username);
-        }
-    });
-
-    registerForm.addEventListener("submit", function(event) {
-        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
-        const newUsername = document.getElementById("newUsername").value;
-        const newEmail = document.getElementById("newEmail").value;
-        const newPassword = document.getElementById("newPassword").value;
-        const fullName = document.getElementById("fullName").value;
-        const phoneNumber = document.getElementById("phoneNumber").value;
-        const age = document.getElementById("age").value;
-        const location = document.getElementById("location").value;
-        console.log("Register attempt with username: ", newUsername);
-
-        // Ampidiro ny angona voasoratra anarana ao amin'ny lisitra
-        const newUser = {
-            username: newUsername,
-            email: newEmail,
-            password: newPassword,
-            fullName: fullName,
-            phoneNumber: phoneNumber,
-            age: age,
-            location: location
-        };
-
-        registeredUsers.push(newUser);
-        localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
-
-        alert("Inscription réussie!");
-        console.log("Registration successful for user: ", newUsername);
-        // Redirect amin'ny pejy famoronana profil rehefa tafiditra ny mpampiasa
-        window.location.href = "profile.html"; 
-    });
-
-    forgotPassword.addEventListener("click", function(event) {
-        event.prevent.preventDefault();
-        alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
-    });
-});
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Minet</h1>
+    </header>
+    <div class="container">
+        <main>
+            <section id="loginSection">
+                <h2>Se connecter</h2>
+                <form id="loginForm">
+                    <label for="username">Nom d'utilisateur ou Email:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                    <a href="#" id="forgotPassword">Mot de passe oublié?</a><br><br>
+                    <input type="submit" value="Connexion">
+                </form>
+                <p>Pas encore de compte? <a href="#" id="registerLink">S'inscrire</a></p>
+            </section>
+            <section id="registerSection" style="display:none;">
+                <h2>S'inscrire</h2>
+                <form id="registerForm">
+                    <label for="newUsername">Nom d'utilisateur:</label>
+                    <input type="text" id="newUsername" name="newUsername" required><br><br>
+                    <label for="newEmail">Email:</label>
+                    <input type="email" id="newEmail" name="newEmail" required><br><br>
+                    <label for="newPassword">Mot de passe:</label>
+                    <input type="password" id="newPassword" name="newPassword" required><br><br>
+                    <label for="fullName">Nom complet:</label>
+                    <input type="text" id="fullName" name="fullName" required><br><br>
+                    <label for="phoneNumber">Numéro de téléphone:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
+                    <label for="age">Âge:</label>
+                    <input type="number" id="age" name="age" required><br><br>
+                    <label for="location">Lieu de résidence:</label>
+                    <input type="text" id="location" name="location" required><br><br>
+                    <input type="submit" value="S'inscrire">
+                </form>
+                <p>Déjà un compte? <a href="#" id="loginLink">Se connecter</a></p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Minet. Tous droits réservés.</p>
+    </footer>
+    <script src="scripts.js" defer></script>
+</body>
+</html>
