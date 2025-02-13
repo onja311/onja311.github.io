@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     profileForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Fisorohana ny fisehoan'ny pejy
+        event.preventDefault(); // Misorohana ny fisehoan'ny pejy
         const fullName = document.getElementById("fullName").value;
         const phoneNumber = document.getElementById("phoneNumber").value;
         const bio = document.getElementById("bio").value;
@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             reader.readAsDataURL(profilePictureInput.files[0]);
         }
 
-        // Tehirizo ny angona profil any amin'ny 
-        console.log("Profil enregistré:", fullName, phoneNumber, bio, profilePictureURL);
+        // Tehirizo ny angona profil any amin'ny console.log("Profil enregistré:", fullName, phoneNumber, bio, profilePictureURL);
         alert("Profil enregistré avec succès!");
     });
 });
