@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     forgotPassword.addEventListener("click", function(event) {
-        event.prevent.preventDefault();
+        event.preventDefault();
         alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
     });
 
