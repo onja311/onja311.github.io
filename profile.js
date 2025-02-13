@@ -1,106 +1,79 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const logoutButton = document.getElementById("logoutButton");
-    const profileForm = document.getElementById("profileForm");
-
-    logoutButton.addEventListener("click", function() {
-        window.location.href = "index.html";
-    });
-
-    profileForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misorohana ny fisehoan'ny pejy
-        const fullName = document.getElementById("fullName").value;
-        const phoneNumber = document.getElementById("phoneNumber").value;
-        const bio = document.getElementById("bio").value;
-        const profilePictureInput = document.getElementById("profilePicture");
-
-        let profilePictureURL = "";
-        if (profilePictureInput.files && profilePictureInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                profilePictureURL = e.target.result;
-                // Avelao ny sary hiseho ao amin'ny profil na hotehirizina
-            };
-            reader.readAsDataURL(profilePictureInput.files[0]);
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Profil</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="profile.js" defer></script>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Arial, sans-serif;
         }
-
-        // Tehirizo ny angona profil
-        console.log("Profil enregistré:", fullName, phoneNumber, bio, profilePictureURL);
-        alert("Profil enregistré avec succès!");
-
-        // Fampisehoana ny fizarana hafa
-        const publicationsContainer = document.getElementById("publications");
-        const membersContainer = document.getElementById("members");
-        const photosContainer = document.getElementById("photos");
-        const accountSettingsContainer = document.getElementById("accountSettings");
-
-        // Ohatra: mampiditra publication
-        const publications = [
-            { title: "Publication 1", description: "Description de la publication 1" },
-            { title: "Publication 2", description: "Description de la publication 2" },
-        ];
-        
-        publications.forEach(function(publication) {
-            const publicationElement = document.createElement("div");
-            const title = document.createElement("h3");
-            title.textContent = publication.title;
-            const description = document.createElement("p");
-            description.textContent = publication.description;
-
-            publicationElement.appendChild(title);
-            publicationElement.appendChild(description);
-            publicationsContainer.appendChild(publicationElement);
-        });
-
-        // Ohatra: mampiditra lisitry ny mpikambana
-        const members = [
-            { name: "Mpikambana 1", bio: "Bio an'i Mpikambana 1" },
-            { name: "Mpikambana 2", bio: "Bio an'i Mpikambana 2" },
-        ];
-
-        members.forEach(function(member) {
-            const memberElement = document.createElement("div");
-            const name = document.createElement("h3");
-            name.textContent = member.name;
-            const bio = document.createElement("p");
-            bio.textContent = member.bio;
-
-            const followButton = document.createElement("button");
-            followButton.textContent = "S'uivre";
-            followButton.addEventListener("click", function() {
-                alert(`Vous suivez maintenant ${member.name}`);
-            });
-
-            memberElement.appendChild(name);
-            memberElement.appendChild(bio);
-            memberElement.appendChild(followButton);
-            membersContainer.appendChild(memberElement);
-        });
-
-        // Ohatra: mampiditra sary
-        const photos = [
-            "photo1.jpg",
-            "photo2.jpg",
-        ];
-
-        photos.forEach(function(photo) {
-            const img = document.createElement("img");
-            img.src = photo;
-            photosContainer.appendChild(img);
-        });
-
-        // Ohatra: mampiditra parametres du compte
-        const settings = [
-            { setting: "Changement de mot de passe" },
-            { setting: "Mise à jour de l'adresse email" },
-        ];
-
-        settings.forEach(function(setting) {
-            const settingElement = document.createElement("div");
-            const settingText = document.createElement("p");
-            settingText.textContent = setting.setting;
-
-            settingElement.appendChild(settingText);
-            accountSettingsContainer.appendChild(settingElement);
-        });
-    });
-});
+        .profile-container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .profile-container input[type="text"], .profile-container input[type="tel"], .profile-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .profile-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .profile-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Créer Votre Profil</h1>
+        <form id="profileForm">
+            <label for="profilePicture">Photo de Profil:</label>
+            <input type="file" id="profilePicture" name="profilePicture" accept="image/*"><br><br>
+            <label for="fullName">Nom complet:</label>
+            <input type="text" id="fullName" name="fullName" required><br><br>
+            <label for="job">Travail:</label>
+            <input type="text" id="job" name="job"><br><br>
+            <label for="location">Lieu de résidence:</label>
+            <input type="text" id="location" name="location"><br><br>
+            <label for="product">Produit/Service:</label>
+            <input type="text" id="product" name="product"><br><br>
+            <input type="submit" value="Enregistrer">
+        </form>
+        <a href="nextpage.html" id="nextPageLink" style="display:none;">Aller à la page suivante</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Mon Site Web. Tous droits réservés.</p>
+        <p>Contactez-nous: <a href="mailto:harisoaonja06@gmail.com">harisoaonja06@gmail.com</a></p>
+        <p>Suivez-nous: 
+            <a href="https://www.facebook.com/minet" target="_blank">Facebook</a>
+        </p>
+    </footer>
+</body>
+</html>
