@@ -11,19 +11,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
 
     loginLink.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.prevent.preventDefault();
         loginSection.style.display = "block";
         registerSection.style.display = "none";
     });
 
     registerLink.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.prevent.preventDefault();
         loginSection.style.display = "none";
         registerSection.style.display = "block";
     });
 
     loginForm.addEventListener("submit", function(event) {
-        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
+        event.prevent.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     registerForm.addEventListener("submit", function(event) {
-        event.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
+        event.prevent.prevent.prevent.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
         const newUsername = document.getElementById("newUsername").value;
         const newEmail = document.getElementById("newEmail").value;
         const newPassword = document.getElementById("newPassword").value;
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     forgotPassword.addEventListener("click", function(event) {
-        event.preventDefault();
+        event.prevent.prevent.preventDefault();
         alert("Veuillez contacter l'administrateur pour réinitialiser votre mot de passe.");
     });
 });
