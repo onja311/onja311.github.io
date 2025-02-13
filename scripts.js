@@ -2,19 +2,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginButton = document.getElementById("loginButton");
     const registerButton = document.getElementById("registerButton");
     const logoutButton = document.getElementById("logoutButton");
-    const loginSection = document.getElementById("loginSection");
-    const loginForm = document.getElementById("loginForm");
-    const registerSection = document.getElementId("registerSection");
-    const registerForm = document.getElementById("registerForm");
-    const successMessage = document.getElementById("successMessage");
-    const loginLink = document.getElementById("loginLink");
-    const forgotPassword = document.getElementById("forgotPassword");
-    const publicationFormSection = document.getElementById("publicationFormSection");
-    const publicationForm = document.getElementById("publicationForm");
-    const publicationsSection = document.getElementById("publications");
+    const profileForm = document.getElementById("profileForm");
 
     loginButton.addEventListener("click", function() {
-        loginSection.style.display = "block";
+        loginSection.style.display = "none";
         registerSection.style.display = "none";
         successMessage.style.display = "none";
         publicationFormSection.style.display = "none";
@@ -29,29 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
         publicationsSection.style.display = "none";
     });
 
-    loginForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fidirana
-        window.location.href = "profile.html"; // Redirect mankany amin'ny pejy profil
-    });
-
-    registerForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Misoroka ny fisehoana mahazatra amin'ny fisoratana anarana
-        registerSection.style.display = "none";
-        successMessage.style.display = "block";
-        publicationFormSection.style.display = "none";
-        publicationsSection.style.display = "none";
-    });
-
-    loginLink.addEventListener("click", function() {
-        successMessage.style.display = "none";
-        loginSection.style.display = "block";
+    profileForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Misoroka ny fisehoan'ny pejy
+        window.location.href = "membre.html"; // Redirect mankany amin'ny pejy membre rehefa voarakitra ny profil
     });
 
     logoutButton.addEventListener("click", function() {
         loginButton.style.display = "block";
         registerButton.style.display = "block";
         logoutButton.style.display = "none";
-        publicationFormSection.style.display = "none";
+        profileForm.style.display = "none";
         publicationsSection.style.display = "none";
     });
 
