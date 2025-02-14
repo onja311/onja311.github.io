@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="mg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Ny Profilako - MINET</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Profil</h1>
-    </header>
-    <div class="container">
-        <div class="profile-container">
-            <h2>Créer Votre Profil</h2>
-            <form id="profileForm">
-                <label for="profilePicture">Photo de Profil:</label>
-                <input type="file" id="profilePicture" name="profilePicture" accept="image/*"><br><br>
-                <label for="fullName">Nom complet:</label>
-                <input type="text" id="fullName" name="fullName" required><br><br>
-                <label for="job">Travail:</label>
-                <input type="text" id="job" name="job"><br><br>
-                <label for="location">Lieu de résidence:</label>
-                <input type="text" id="location" name="location"><br><br>
-                <label for="product">Produit/Service:</label>
-                <input type="text" id="product" name="product"><br><br>
-                <input type="submit" value="Enregistrer">
-            </form>
+        <div class="logo">
+            <h1>MINET</h1>
         </div>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Tena Pejy</a></li>
+                <li><a href="settings.html">Fikirana</a></li>
+                <li><a href="logout.html">Hivoaka</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="profile-container">
+            <h2>Ny Profilako</h2>
+            <p><strong>Anarana:</strong> <span id="displayFirstName"></span></p>
+            <p><strong>Fanampinanarana:</strong> <span id="displayLastName"></span></p>
+            <p><strong>Daty nahaterahana:</strong> <span id="displayBirthDate"></span></p>
+            <p><strong>Mombamomba:</strong> <span id="displayBio"></span></p>
+            <h3>Sary mombamomba</h3>
+            <img id="displayProfilePhoto" src="" alt="Sary mombamomba">
+            <h3>Sary fonony</h3>
+            <img id="displayCoverPhoto" src="" alt="Sary fonony">
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2025 Minet. Tous droits réservés.</p>
+        <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
     </footer>
-    <script src="profile.js" defer></script>
+    <script src="profile.js"></script>
 </body>
 </html>
