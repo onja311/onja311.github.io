@@ -1,4 +1,37 @@
-.shop-container, .add-product-container {
+body {
+    background-color: #ffffff; /* Loko fotsy */
+    color: #4B0082; /* Loko violet */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header .logo {
+    background-color: #4B0082; /* Loko violet */
+    color: #ffffff; /* Loko fotsy */
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    animation: fadeIn 2s ease-in-out; /* Animation ho an'ny soratra "MINET" */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-container, .profile-container, .login-container, .content-container, .settings-container, .shop-container, .add-product-container {
     max-width: 800px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -9,11 +42,11 @@
     margin: auto;
 }
 
-.shop-container h2, .add-product-container h2 {
+.register-container h2, .profile-container h2, .profile-container h3, .login-container h2, .content-container h2, .settings-container h2, .shop-container h2, .add-product-container h2 {
     color: #4B0082; /* Loko violet */
 }
 
-.add-product-container input, .add-product-container textarea, .add-product-container button {
+.register-container input, .profile-container input, .login-container input, .settings-container input, .add-product-container input, .add-product-container textarea, .add-product-container button {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -21,7 +54,9 @@
     border-radius: 5px;
 }
 
-.add-product-container button {
+.register-container button, .profile-container button, .login-container button, .settings-container button, .add-product-container button {
+    width: 100%;
+    padding: 10px;
     background-color: #4B0082; /* Loko violet */
     color: #ffffff; /* Loko fotsy */
     border: none;
@@ -29,7 +64,7 @@
     cursor: pointer;
 }
 
-.add-product-container button:hover {
+.register-container button:hover, .profile-container button:hover, .login-container button:hover, .settings-container button:hover, .add-product-container button:hover {
     background-color: #0000FF; /* Loko manga */
 }
 
@@ -48,4 +83,15 @@
     padding: 20px;
     margin: 10px;
     max-width: 200px;
+}
+
+footer {
+    background-color: #4B0082; /* Loko violet */
+    color: #ffffff; /* Loko fotsy */
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
 }
