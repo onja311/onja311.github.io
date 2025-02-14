@@ -17,9 +17,21 @@ header .logo {
     padding: 1em;
     width: 100%;
     box-sizing: border-box;
+    animation: fadeIn 2s ease-in-out; /* Animation ho an'ny soratra "MINET" */
 }
 
-.register-container, .profile-container, .login-container, .content-container {
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-container, .profile-container, .login-container, .content-container, .settings-container {
     max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -29,11 +41,11 @@ header .logo {
     text-align: center;
 }
 
-.register-container h2, .profile-container h2, .profile-container h3, .login-container h2, .content-container h2 {
+.register-container h2, .profile-container h2, .profile-container h3, .login-container h2, .content-container h2, .settings-container h2 {
     color: #4B0082; /* Loko violet */
 }
 
-.register-container input, .profile-container input, .login-container input {
+.register-container input, .profile-container input, .login-container input, .settings-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -41,7 +53,7 @@ header .logo {
     border-radius: 5px;
 }
 
-.register-container button, .profile-container button, .login-container button {
+.register-container button, .profile-container button, .login-container button, .settings-container button {
     width: 100%;
     padding: 10px;
     background-color: #4B0082; /* Loko violet */
@@ -51,7 +63,7 @@ header .logo {
     cursor: pointer;
 }
 
-.register-container button:hover, .profile-container button:hover, .login-container button:hover {
+.register-container button:hover, .profile-container button:hover, .login-container button:hover, .settings-container button:hover {
     background-color: #0000FF; /* Loko manga */
 }
 
