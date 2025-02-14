@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MINET</title>
+    <title>Hisoratra anarana - MINET</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="splash-screen">
+    <header>
         <div class="logo">
-            <h1>M</h1>
-            <div class="dots">....</div>
+            <h1>MINET</h1>
         </div>
-        <div class="progress-bar">
-            <div class="progress"></div>
-        </div>
-    </div>
-    <main id="main-content" style="display: none;">
-        <section class="login-container">
-            <h2>Midira ao amin'ny Kaontinao</h2>
-            <form action="login_action.php" method="post">
+    </header>
+    <main>
+        <section class="register-container">
+            <h2>Hanokatra Kaonty Vaovao</h2>
+            <form id="registerForm" onsubmit="return register()">
                 <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Laharana finday na Email" required>
                 <input type="password" id="password" name="password" placeholder="Teny miafina" required>
-                <button type="submit">Hiditra</button>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Avereno ny teny miafina" required>
+                <button type="submit">Hisoratra anarana</button>
             </form>
-            <p><a href="forgot_password.html">Adino ny teny miafina?</a> | <a href="register.html">Hisoratra anarana</a></p>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="register.js"></script>
 </body>
 </html>
