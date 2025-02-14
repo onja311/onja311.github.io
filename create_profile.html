@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famoronana Profil - MINET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MINET</h1>
+        </div>
+    </header>
+    <main>
+        <section class="profile-container">
+            <h2>Famoronana Profil</h2>
+            <form onsubmit="return createProfile()">
+                <input type="text" id="firstName" name="firstName" placeholder="Anarana" required>
+                <input type="text" id="lastName" name="lastName" placeholder="Fanampinanarana" required>
+                <input type="date" id="birthDate" name="birthDate" required>
+                <input type="text" id="bio" name="bio" placeholder="Mombamomba ny tenanao" required>
+                <button type="submit">Mametra Profil</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
+    </footer>
+    <script src="create_profile.js"></script>
+</body>
+</html>
