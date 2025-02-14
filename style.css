@@ -19,7 +19,7 @@ header .logo {
     box-sizing: border-box;
 }
 
-.register-container, .login-container, .forgot-password-container {
+.register-container {
     max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -29,11 +29,11 @@ header .logo {
     text-align: center;
 }
 
-.register-container h2, .login-container h2, .forgot-password-container h2 {
+.register-container h2 {
     color: #4B0082; /* Loko violet */
 }
 
-.register-container input, .login-container input, .forgot-password-container input {
+.register-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -41,7 +41,7 @@ header .logo {
     border-radius: 5px;
 }
 
-.register-container button, .login-container button, .forgot-password-container button {
+.register-container button {
     width: 100%;
     padding: 10px;
     background-color: #4B0082; /* Loko violet */
@@ -51,7 +51,7 @@ header .logo {
     cursor: pointer;
 }
 
-.register-container button:hover, .login-container button:hover, .forgot-password-container button:hover {
+.register-container button:hover {
     background-color: #0000FF; /* Loko manga */
 }
 
