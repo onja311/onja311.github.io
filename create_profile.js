@@ -7,5 +7,5 @@ function createProfile() {
     // Ampidiro ao amin'ny tahiry (database) ny mombamomba ny profil
     
     alert("Profil voaforona soa aman-tsara!");
-    return true;
+    return false; // Manakana ny form mba hisorohana ny famerenana redirect
 }
