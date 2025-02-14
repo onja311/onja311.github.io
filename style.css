@@ -1,4 +1,25 @@
-.profile-container {
+body {
+    background-color: #ffffff; /* Loko fotsy */
+    color: #4B0082; /* Loko violet */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header .logo {
+    background-color: #4B0082; /* Loko violet */
+    color: #ffffff; /* Loko fotsy */
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.register-container {
     max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -8,11 +29,11 @@
     text-align: center;
 }
 
-.profile-container h2 {
+.register-container h2 {
     color: #4B0082; /* Loko violet */
 }
 
-.profile-container input {
+.register-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -20,7 +41,7 @@
     border-radius: 5px;
 }
 
-.profile-container button {
+.register-container button {
     width: 100%;
     padding: 10px;
     background-color: #4B0082; /* Loko violet */
@@ -30,6 +51,17 @@
     cursor: pointer;
 }
 
-.profile-container button:hover {
+.register-container button:hover {
     background-color: #0000FF; /* Loko manga */
+}
+
+footer {
+    background-color: #4B0082; /* Loko violet */
+    color: #ffffff; /* Loko fotsy */
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
 }
