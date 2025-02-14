@@ -1,31 +1,33 @@
-<!DOCTYPE html>
-<html lang="mg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hisoratra anarana - MINET</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>MINET</h1>
-        </div>
-    </header>
-    <main>
-        <section class="register-container">
-            <h2>Hanokatra Kaonty Vaovao</h2>
-            <form id="registerForm" onsubmit="return register()">
-                <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Laharana finday na Email" required>
-                <input type="password" id="password" name="password" placeholder="Teny miafina" required>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Avereno ny teny miafina" required>
-                <button type="submit">Hisoratra anarana</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
-    </footer>
-    <script src="register.js"></script>
-</body>
-</html>
+function createProfile() {
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var birthDate = document.getElementById("birthDate").value;
+    var bio = document.getElementById("bio").value;
+    
+    // Ampidiro ao amin'ny tahiry (database) ny mombamomba ny profil
+    
+    alert("Profil voaforona soa aman-tsara!");
+    
+    // Mampiseho ny faritra fametrahana sary
+    document.getElementById("profilePhotos").style.display = "block";
+    
+    // Afeno ny form profil
+    document.getElementById("profileForm").style.display = "none";
+    
+    return false; // Manakana ny form mba hisorohana ny famerenana redirect
+}
+
+function submitPhotos() {
+    var profilePhoto = document.getElementById("profilePhoto").files[0];
+    var coverPhoto = document.getElementById("coverPhoto").files[0];
+    
+    // Ampidiro ao amin'ny tahiry (database) ny sary mombamomba sy ny sary fonony
+    
+    alert("Sary nampidirina soa aman-tsara!");
+    
+    // Hafatra fiarahabana
+    alert("Tongasoa eto amin'ny MINET, " + document.getElementById("firstName").value + "!");
+    
+    // Redirect mankany amin'ny pejy tena izy na pejy hafa
+    window.location.href = "home.html"; // Hanoloana amin'ny URL mety
+}
