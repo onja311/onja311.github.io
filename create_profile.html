@@ -22,6 +22,13 @@
                 <input type="text" id="bio" name="bio" placeholder="Mombamomba ny tenanao" required>
                 <button type="submit">Mametra Profil</button>
             </form>
+            <div id="profilePhotos" style="display: none;">
+                <h3>Ajouter une photo de profil</h3>
+                <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+                <h3>Ajouter une photo de couverture</h3>
+                <input type="file" id="coverPhoto" name="coverPhoto" accept="image/*">
+                <button onclick="submitPhotos()">Ampidiro ny Sary</button>
+            </div>
         </section>
     </main>
     <footer>
