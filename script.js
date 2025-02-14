@@ -1,15 +1,6 @@
-function resetPassword() {
-    var emailOrPhone = document.getElementById("emailOrPhone").value;
-    if (validateEmailOrPhone(emailOrPhone)) {
-        alert("Rohy famerenana mot de passe nalefa");
-        // Misy kaody ilaina mba handefasana ny rohy famerenana amin'ny server-nao
-    } else {
-        alert("Azafady, ampidiro ny email na nomeraon-telefaonina mety.");
-    }
-}
-
-function validateEmailOrPhone(input) {
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var phonePattern = /^\d{10}$/;
-    return emailPattern.test(input) || phonePattern.test(input);
-}
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        document.getElementById("splash-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+    }, 3000); // Mampiseho ny splash screen mandritra ny 3 segondra
+});
