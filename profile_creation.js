@@ -12,7 +12,7 @@ function createProfile() {
     document.getElementById("profilePhotos").style.display = "block";
     
     // Afeno ny form profil
-    document.querySelector("form").style.display = "none";
+    document.getElementById("profileForm").style.display = "none";
     
     return false; // Manakana ny form mba hisorohana ny famerenana redirect
 }
