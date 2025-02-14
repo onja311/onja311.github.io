@@ -1,4 +1,4 @@
-.login-container {
+.forgot-password-container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -9,12 +9,12 @@
     text-align: center;
 }
 
-.login-container h2 {
+.forgot-password-container h2 {
     text-align: center;
     color: #4B0082; /* Loko violet */
 }
 
-.login-container input {
+.forgot-password-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -22,7 +22,7 @@
     border-radius: 5px;
 }
 
-.login-container button {
+.forgot-password-container button {
     width: 100%;
     padding: 10px;
     background-color: #4B0082; /* Loko violet */
@@ -32,15 +32,6 @@
     cursor: pointer;
 }
 
-.login-container button:hover {
+.forgot-password-container button:hover {
     background-color: #0000FF; /* Loko manga */
-}
-
-.login-container a {
-    color: #4B0082; /* Loko violet */
-    text-decoration: none;
-}
-
-.login-container a:hover {
-    text-decoration: underline;
 }
