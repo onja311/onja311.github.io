@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fikirana - MINET</title>
+    <title>Fivarotana - MINET</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,25 +15,23 @@
             <ul>
                 <li><a href="home.html">Tena Pejy</a></li>
                 <li><a href="profile.html">Ny Profilako</a></li>
+                <li><a href="settings.html">Fikirana</a></li>
+                <li><a href="shop.html">Fivarotana</a></li>
                 <li><a href="logout.html">Hivoaka</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="settings-container">
-            <h2>Fikirana</h2>
-            <form onsubmit="return updateSettings()">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="phone">Laharana finday:</label>
-                <input type="text" id="phone" name="phone" required>
-                <button type="submit">Manavao</button>
-            </form>
+        <section class="shop-container">
+            <h2>Fivarotana</h2>
+            <div class="products">
+                <!-- Eto no hisy ny lisitry ny entana amidy -->
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
     </footer>
-    <script src="settings.js"></script>
+    <script src="shop.js"></script>
 </body>
 </html>
