@@ -95,15 +95,6 @@ header .logo {
     background-color: #0000FF; /* Loko manga */
 }
 
-.login-container a {
-    color: #4B0082; /* Loko violet */
-    text-decoration: none;
-}
-
-.login-container a:hover {
-    text-decoration: underline;
-}
-
 footer {
     background-color: #4B0082; /* Loko violet */
     color: #ffffff; /* Loko fotsy */
