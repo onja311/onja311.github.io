@@ -1,14 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var progressBar = document.querySelector(".progress");
-    var width = 0;
-    var interval = setInterval(function() {
-        if (width >= 100) {
-            clearInterval(interval);
-            document.getElementById("splash-screen").style.display = "none";
-            document.getElementById("main-content").style.display = "block";
-        } else {
-            width++;
-            progressBar.style.width = width + "%";
-        }
-    }, 30); // Fanitarana ny tsipika mandritra ny 3 segondra
-});
+function resetPassword() {
+    var emailOrPhone = document.getElementById("emailOrPhone").value;
+    if (validateEmailOrPhone(emailOrPhone)) {
+        alert("Rohy famerenana teny miafina nalefa");
+        return true;
+    } else {
+        alert("Azafady, ampidiro ny email na nomeraon-telefaonina mety.");
+        return false;
+    }
+}
+
+function validateEmailOrPhone(input) {
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var phonePattern = /^\d{10}$/;
+    return emailPattern.test(input) || phonePattern.test(input);
+}
