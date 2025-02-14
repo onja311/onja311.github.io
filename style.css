@@ -1,17 +1,4 @@
-body {
-    background-color: #ffffff; /* Loko fotsy */
-    color: #4B0082; /* Loko violet */
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background-color: #4B0082; /* Loko violet */
-    color: #ffffff; /* Loko fotsy */
-    text-align: center;
-    padding: 1em;
-}
-
-.register-container {
+.login-container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -21,12 +8,12 @@ header {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.register-container h2 {
+.login-container h2 {
     text-align: center;
     color: #4B0082; /* Loko violet */
 }
 
-.register-container input {
+.login-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -34,7 +21,7 @@ header {
     border-radius: 5px;
 }
 
-.register-container button {
+.login-container button {
     width: 100%;
     padding: 10px;
     background-color: #4B0082; /* Loko violet */
@@ -44,6 +31,15 @@ header {
     cursor: pointer;
 }
 
-.register-container button:hover {
+.login-container button:hover {
     background-color: #0000FF; /* Loko manga */
+}
+
+.login-container a {
+    color: #4B0082; /* Loko violet */
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
 }
