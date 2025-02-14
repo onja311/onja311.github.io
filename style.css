@@ -19,7 +19,7 @@ header .logo {
     box-sizing: border-box;
 }
 
-.register-container, .profile-container, .login-container {
+.register-container, .profile-container, .login-container, .content-container {
     max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -29,7 +29,7 @@ header .logo {
     text-align: center;
 }
 
-.register-container h2, .profile-container h2, .profile-container h3, .login-container h2 {
+.register-container h2, .profile-container h2, .profile-container h3, .login-container h2, .content-container h2 {
     color: #4B0082; /* Loko violet */
 }
 
