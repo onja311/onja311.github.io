@@ -3,37 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Famoronana Profil - MINET</title>
+    <title>MINET</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <div id="splash-screen">
         <div class="logo">
-            <h1>MINET</h1>
+            <h1>M</h1>
+            <div class="dots">....</div>
         </div>
-    </header>
-    <main>
-        <section class="profile-container">
-            <h2>Famoronana Profil</h2>
-            <form id="profileForm" onsubmit="return createProfile()">
-                <input type="text" id="firstName" name="firstName" placeholder="Anarana" required>
-                <input type="text" id="lastName" name="lastName" placeholder="Fanampinanarana" required>
-                <input type="date" id="birthDate" name="birthDate" required>
-                <input type="text" id="bio" name="bio" placeholder="Mombamomba ny tenanao" required>
-                <button type="submit">Mametra Profil</button>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <main id="main-content" style="display: none;">
+        <section class="login-container">
+            <h2>Midira ao amin'ny Kaontinao</h2>
+            <form action="login_action.php" method="post">
+                <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Laharana finday na Email" required>
+                <input type="password" id="password" name="password" placeholder="Teny miafina" required>
+                <button type="submit">Hiditra</button>
             </form>
-            <div id="profilePhotos" style="display: none;">
-                <h3>Ajouter une photo de profil</h3>
-                <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
-                <h3>Ajouter une photo de couverture</h3>
-                <input type="file" id="coverPhoto" name="coverPhoto" accept="image/*">
-                <button type="button" onclick="submitPhotos()">Ampidiro ny Sary</button>
-            </div>
+            <p><a href="forgot_password.html">Adino ny teny miafina?</a> | <a href="register.html">Hisoratra anarana</a></p>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
     </footer>
-    <script src="profile_creation.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
