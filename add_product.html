@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Produit - MINET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MINET</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Tena Pejy</a></li>
+                <li><a href="profile.html">Ny Profilako</a></li>
+                <li><a href="settings.html">Fikirana</a></li>
+                <li><a href="shop.html">Fivarotana</a></li>
+                <li><a href="logout.html">Hivoaka</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="add-product-container">
+            <h2>Ajouter un Produit</h2>
+            <form onsubmit="return addProduct()">
+                <input type="text" id="productName" name="productName" placeholder="Anaran'ny entana" required>
+                <input type="number" id="productPrice" name="productPrice" placeholder="Vidiny" required>
+                <textarea id="productDescription" name="productDescription" placeholder="Famaritana" required></textarea>
+                <input type="file" id="productImage" name="productImage" accept="image/*" required>
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
+    </footer>
+    <script src="add_product.js"></script>
+</body>
+</html>
