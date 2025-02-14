@@ -37,6 +37,12 @@ header .logo {
     font-size: 2em;
 }
 
+.dots {
+    font-size: 2em;
+    color: #ffffff; /* Loko fotsy */
+    margin-top: 10px;
+}
+
 .progress-bar {
     width: 80%;
     height: 10px;
