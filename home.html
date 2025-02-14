@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MINET - Tena Pejy</title>
+    <title>MINET</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <div id="splash-screen">
         <div class="logo">
-            <h1>MINET</h1>
+            <h1>M</h1>
+            <div class="dots">....</div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="profile.html">Ny Profilako</a></li>
-                <li><a href="settings.html">Fikirana</a></li>
-                <li><a href="logout.html">Hivoaka</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="content-container">
-            <h2>Tongasoa eto amin'ny MINET</h2>
-            <p>Faly izahay mandray anao!</p>
-            <p>Jereo ny mombamomba anao <a href="profile.html">eto</a>.</p>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <main id="main-content" style="display: none;">
+        <section class="login-container">
+            <h2>Midira ao amin'ny Kaontinao</h2>
+            <form action="login_action.php" method="post">
+                <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Laharana finday na Email" required>
+                <input type="password" id="password" name="password" placeholder="Teny miafina" required>
+                <button type="submit">Hiditra</button>
+            </form>
+            <p><a href="forgot_password.html">Adino ny teny miafina?</a> | <a href="register.html">Hisoratra anarana</a></p>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
