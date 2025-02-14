@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikirana - MINET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MINET</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Tena Pejy</a></li>
+                <li><a href="profile.html">Ny Profilako</a></li>
+                <li><a href="logout.html">Hivoaka</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="settings-container">
+            <h2>Fikirana</h2>
+            <form onsubmit="return updateSettings()">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Laharana finday:</label>
+                <input type="text" id="phone" name="phone" required>
+                <button type="submit">Manavao</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 MINET. Zo rehetra voatokana.</p>
+    </footer>
+    <script src="settings.js"></script>
+</body>
+</html>
