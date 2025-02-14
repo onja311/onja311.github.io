@@ -1,6 +1,26 @@
-.forgot-password-container {
+body {
+    background-color: #ffffff; /* Loko fotsy */
+    color: #4B0082; /* Loko violet */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header .logo {
+    background-color: #4B0082; /* Loko violet */
+    color: #ffffff; /* Loko fotsy */
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.register-container {
     max-width: 400px;
-    margin: 50px auto;
     padding: 20px;
     border: 1px solid #ddd;
     background-color: #f5f5f5;
@@ -9,12 +29,11 @@
     text-align: center;
 }
 
-.forgot-password-container h2 {
-    text-align: center;
+.register-container h2 {
     color: #4B0082; /* Loko violet */
 }
 
-.forgot-password-container input {
+.register-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -22,7 +41,7 @@
     border-radius: 5px;
 }
 
-.forgot-password-container button {
+.register-container button {
     width: 100%;
     padding: 10px;
     background-color: #4B0082; /* Loko violet */
@@ -32,6 +51,17 @@
     cursor: pointer;
 }
 
-.forgot-password-container button:hover {
+.register-container button:hover {
     background-color: #0000FF; /* Loko manga */
+}
+
+footer {
+    background-color: #4B0082; /* Loko violet */
+    color: #ffffff; /* Loko fotsy */
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
 }
